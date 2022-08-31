@@ -1,0 +1,124 @@
+ <!-- HERO START -->
+ <script>
+    //  Grab the queryString from the URL
+    let arr = [];
+    let queryString = window.location.search;
+    let urlParams = new URLSearchParams(queryString);
+
+    //  Iterate over key value pairs
+    urlParams.forEach(function (value, key) {
+      arr.push(value);
+    });
+
+    //  Grab specific keys and do something with the value
+    let utmCampaign = urlParams.get("utm_campaign");
+    let utmSource = urlParams.get("utm_source");
+    let utmMedium = urlParams.get("utm_medium");
+    let utmContent = urlParams.get("utm_content");
+    let utmTerm = urlParams.get("utm_term");
+
+    let lp = "lp=" + encodeURI(window.location.host + window.location.pathname);
+
+    let select = "1pack";
+    urlParams.forEach(function (value, key) {
+      if (key == "target" && value.includes("top")) {
+        select = "2pack";
+      }
+    });
+  </script>
+
+  <div class="container-fluid quiz-hero">
+    <div class="content-container row mx-auto justify-content-between container-lg px-0">      
+      <div class="hero-container col-md-6 row mx-auto align-content-center">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Proven, over-the-counter, wearable, medical device for ED without
+            <!-- <br/> -->
+            <span id="rotating-word" class="red">prescription</span>
+          </h1>
+          <p class="byline">
+            Over 1 million Eddies delivered. See if Eddie is right for you by taking this 2 minute quiz.
+          </p>
+        </div>
+        <img class="d-flex d-md-none w-100 hero-img"
+          src="https://giddywebhosting.blob.core.windows.net/image-assets/Young_couple.png" alt="">
+        <div class="quiz-buttons container full-screen">
+          <p class="question-text text-xl-center" style="font-family: 'Slate Pro Regular'">
+            Are you considering Eddie for yourself or your partner?
+          </p>
+          <div class="top-buttons container row p-0 mx-0 col-12 justify-content-between">
+            <a href="#" id="self" class="btn btn-outline-primary text-center"
+              style="font-weight: 500; font-family: 'Slate Pro Regular'">MYSELF</a>
+            <a href="#" id="partner" class="btn btn-outline-primary text-cneter"
+              style="font-weight: 500; font-family: 'Slate Pro Regular'">MY PARTNER</a>
+          </div>
+          <a href="#" id="takeQuiz" class="btn btn-danger col-12" style="font-weight: 500; font-family: 'Slate Pro Regular'">NEXT
+            QUESTION</a>
+        </div>
+
+        <!-- DESKTOP BUTTON SELF -->
+        <script>
+          let fd1 = "fd=";
+          if(typeof giddyUtils.genFD() !== undefined) {
+            fd1 = giddyUtils.genFD();
+          }
+          let deskButtonSelf = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?quizisfor=myself&utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
+          let deskButtonPartner = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?quizisfor=mypartner&utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
+          let deskButton = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
+          
+          $('#self').attr('href', deskButtonSelf);
+          $('#partner').attr('href', deskButtonPartner);
+          $('#takeQuiz').attr('href', deskButton);
+        </script>
+        <!-- ^ DESKTOP BUTTON SELF ^ -->
+      </div>
+      <div class="col-md-6 hero-img d-none d-md-block"></div>
+    </div>
+  </div>
+
+  <!-- WORD CAROUSEL -->
+  <script>
+    $(function () {
+      count1 = 0;
+      wordsArray1 = [
+        "a prescription",
+        "awkward interruptions",
+        "side effects of ED pills",
+        "blocking the urethra",
+      ];
+      setInterval(function () {
+        count1++;
+        $("#rotating-word").fadeOut(600, function () {
+          $(this)
+            .text(wordsArray1[count1 % wordsArray1.length])
+            .fadeIn(600);
+        });
+      }, 2000);
+    });
+  </script>
+
+  <!-- WORD CAROUSEL - NEW -->
+  <script>
+    $(function () {
+      count = 0;
+      wordsArray = [
+        "proven to work.",
+        "available online.",
+        "comfortable.",
+        "easy to use.",
+        "pill-free.",
+        "body-safe.",
+        "designed by urologists.",
+        "FDA registered."
+      ];
+      setInterval(function () {
+        count++;
+        $("#rotating-word-new").fadeOut(600, function () {
+          $(this)
+            .text(wordsArray[count % wordsArray.length])
+            .fadeIn(600);
+        });
+      }, 2000);
+    });
+  </script>
+  <!-- HERO END -->

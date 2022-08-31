@@ -1,0 +1,116 @@
+<!-- CUST-STORY STARTS -->
+<style>
+    /* LG */
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .story-desc {
+        min-height: 189px;
+      }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+      .story-desc {
+        min-height: 165px;
+      }
+    }
+
+    .video-box {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* max-height: 180.08px; */
+      cursor: pointer;
+      max-width: 90% !important;
+      padding-right: 25px !important;
+      overflow: hidden !important;
+      box-sizing: inherit !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      border-radius: 8px !important;
+    }
+
+    .video-box::after {
+      display: none;
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml,%3Csvg width='49' height='49' viewBox='0 0 49 49' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='24.8579' cy='25.0001' rx='13.2425' ry='13.2243' fill='white'/%3E%3Cpath d='M24.5002 0.819458C11.3292 0.819458 0.639771 11.4942 0.639771 24.6471C0.639771 37.7999 11.3292 48.4747 24.5002 48.4747C37.6711 48.4747 48.3606 37.7999 48.3606 24.6471C48.3606 11.4942 37.6711 0.819458 24.5002 0.819458ZM19.7281 35.3695V13.9247L34.0443 24.6471L19.7281 35.3695Z' fill='%235286F7'/%3E%3C/svg%3E%0A");
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    @media only screen and (max-width: 551px) {
+      .video-box::after {
+        width: 24px;
+        height: 24px;
+        top: calc(50% - 12px);
+        left: calc(50% - 12px);
+      }
+    }
+
+    @media only screen and (min-width: 650px) {
+      .video-box::after {
+        width: 62px;
+        height: 62px;
+        top: calc(50% - 31px);
+        left: calc(50% - 31px);
+      }
+    }
+  </style>
+  <div class="container cust-stories">
+    <div class="col-md-12 px-0">
+      <h2>Customer Stories</h2>
+      <p>Hear from real Eddie® users about their experience.</p>
+
+      <div class="mx-auto row d-md-flex col-md-12 px-0">
+        <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3">
+          <script src="https://fast.wistia.com/embed/medias/d6j1xgn6cp.jsonp" async=""></script>
+          <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+          <span id="chris-video"
+            class="video-box wistia_embed wistia_async_d6j1xgn6cp popover=true popoverAnimateThumbnail=true popoverContent=link"></span>
+          <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/chris-img.png"
+            alt="how-it-works-img" />
+          <h3 class="video-text text-md-left py-3">Chris</h3>
+          <p class="story-desc d-none d-lg-block cust-story-p">
+            “I noticed a difference almost immediately. Me and my partner have
+            had sex more than once a day. The spontaneity and the passion's
+            back. It's been really incredible.”
+          </p>
+        </div>
+        <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3">
+          <script src="https://fast.wistia.com/embed/medias/c7ii4t6f52.jsonp" async=""></script>
+          <div id="dr-kyle-video"
+            class="video-box wistia_embed wistia_async_c7ii4t6f52 popover=true popoverAnimateThumbnail=true popoverContent=link">
+          </div>
+          <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/dr-kyle-img.png"
+            alt="how-it-works-img" />
+          <h3 class="video-text text-md-left py-3">Dr. Chris Kyle</h3>
+          <p class="story-desc d-none d-lg-block cust-story-p">
+            “As a urologist who treats thousands of men for sexual performance
+            issues, Eddie is the best option for anyone looking for an
+            effective, pill-free ED treatment.”
+          </p>
+        </div>
+        <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3">
+          <script src="https://fast.wistia.com/embed/medias/zakvuwo7mz.jsonp" async=""></script>
+          <div id="joe-video"
+            class="video-box wistia_embed wistia_async_zakvuwo7mz popover=true popoverAnimateThumbnail=true popoverContent=link">
+          </div>
+          <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/joe-img.png"
+            alt="how-it-works-img" />
+          <h3 class="video-text text-md-left py-3">Joe</h3>
+          <p class="story-desc d-none d-lg-block cust-story-p"">
+                “Eddie helped me feel more in control. I can get right into it. I
+                can perform when I want to perform. I don’t have to psyche myself
+                up or wait for a pill to kick in … just grab it and go.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- CUST-STORY ENDS -->
