@@ -66,100 +66,26 @@
 
 <script>
 
-    function getComponent(pages){
-        $.ajax({
-        url: pages,
-        methood: "GET",
-        dataType: 'text'
+  function getComponent(pages){
+    $.ajax({
+      url: pages,
+      methood: "GET",
+      dataType: 'text'
     }).done(function (data) {
-        $("body").append(data);
+      $("body").append(data);
     });
-    }
+  }
 
-    $(document).ready(function(){
-   
-        // CODE TO UPDATE EDDIE BY GIDDY WEB PAGES
-   getComponent("../eddie-nav-bar/logo-nb.html");
-   getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
-   getComponent("../eddie-grid/eddie-four-img-grid.html");
-   getComponent("../eddie-triple-vid/go-deeper.html");
-   getComponent("../eddie-one-off/fs-full-screen-img-left.html");
-   getComponent("../eddie-one-off/three-img-review.html");
-   getComponent("../eddie-footer/footer.html");
-//    getComponent("../eddie-nav-bar/logo-nb.html");
-//    getComponent("../eddie-nav-bar/logo-nb.html");
-//    getComponent("../eddie-nav-bar/logo-nb.html");
-    });
-    
-//     $.ajax({
-//         url: "../eddie-feat-icon/jumbo-tron-icons.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-
-//     $.ajax({
-//         url: "../eddie-grid/eddie-four-img-grid.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-
-//     $.ajax({
-//         url: "../eddie-triple-vid/go-deeper.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-
-//     // CODE FOR FS FULL SCREEN IMG LEFT STARTS
-//     $.ajax({
-//         url: "../eddie-one-off/fs-full-screen-img-left.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-//     // CODE FOR FS FULL SCREEN IMG LEFT ENDS
-
-//     // CODE FOR THRE IMG REVIEW STARTS
-//     $.ajax({
-//         url: "../eddie-one-off/three-img-review.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-//     // CODE FOR THRE IMG REVIEW ENDS
-
-//     // CODE FOR FOOTER STARTS
-//     $.ajax({
-//         url: "../eddie-footer/footer.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-//     // CODE FOR FOOTER ENDS
-
-//     $.ajax({
-//         url: "../Example/example-home.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-
-//     $.ajax({
-//         url: "../Example/example-home.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-
-//     $.ajax({
-//         url: "../Example/example-home.html",
-//         dataType: 'text'
-//     }).done(function (data) {
-//         $("body").append(data);
-//     });
-// });
+  $(document).ready(function(){  
+    // CODE TO UPDATE EDDIE BY GIDDY WEB PAGES
+    getComponent("../eddie-nav-bar/logo-nb.html");
+    getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
+    getComponent("../eddie-grid/eddie-four-img-grid.html");
+    getComponent("../eddie-triple-vid/go-deeper.html");
+    getComponent("../eddie-one-off/fs-full-screen-img-left.html");
+    getComponent("../eddie-one-off/three-img-review.html");
+    getComponent("../eddie-footer/footer.html");
+  });
 </script>
 
 </html>
