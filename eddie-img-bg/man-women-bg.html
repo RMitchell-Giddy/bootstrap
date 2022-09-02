@@ -1,11 +1,24 @@
 <style>
-    .img-overlay{height: 112vw;}
+    
+    
+    /* .img-overlay{height: 112vw;}
     .img-overlay .row{
-        /* background-image: url('../eddie-img-bg/img/eddie-man-mobile-img.jpg'); */
+        background-image: url('../eddie-img-bg/img/eddie-man-mobile-img.jpg');
         background-position: center;
         background-size: cover;
-        background-repeat: no-repeat
+        background-repeat: no-repeat;
+    }; */
+
+    /* XS */
+    @media only screen and (min-width: 375px) {
+        .img-overlay{height: 112vw;}
+        .img-overlay .row{
+        background-image: url('../eddie-img-bg/img/eddie-man-mobile-img.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
     };
+        }
 
     /* SM */
     @media only screen and (min-width: 576px) {
@@ -13,12 +26,22 @@
         /* .img-overlay img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
         .img-overlay .row{
             background-image: url('../eddie-img-bg/img/eddie-man-sm.jpg');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         }
     }
 
     /* MD */
     @media only screen and (min-width: 768px) {
-
+        .img-overlay{height: 86vw;}
+        /* .img-overlay img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-sm.jpg');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
     }
 
     /* LG */
@@ -32,9 +55,9 @@
     }
 </style>
 
-<div class="container-fluid col-12 img-overlay d-flex my-4">
+<div class="container-fluid img-overlay d-flex px-0 my-4">
     <div class="row pb-5">
-        <div class="d-block d-sm-none">
+        <!-- <div class="d-block d-sm-none"> 
             <img src="../eddie-img-bg/img/eddie-man-mobile-img.jpg" class="img-fluid position-absolute" alt="man-interview-img">
         </div>
         <div class="d-none d-sm-block d-md-none">
@@ -42,8 +65,9 @@
         </div>
         <div class="d-none d-md-block d-lg-none">
             <img src="../eddie-img-bg/img/eddie-man-sm.jpg" class="img-fluid position-absolute" alt="man-interview-img-md">
-        </div>
-        <div class="container w-100 position-relative align-self-end p-sm-5">
+        </div> -->
+        
+        <div class=" w-100 position-relative align-self-end p-sm-5 pl-5">
             <p class="lead mt-4 text-left text-light overlay-text d-flex align-self-end">Effective ED treatment, developed by
                 experts.</p>
             <p class="lead font-weight-bold text-left text-light overlay-text d-flex align-self-end">Understanding ED
