@@ -37,17 +37,24 @@
         /* .img-overlay img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
         .img-overlay .row{
             background-image: url('../eddie-img-bg/img/eddie-man-sm.jpg');
+         
         }
     }
 
     /* LG */
     @media only screen and (min-width: 992px) {
         .img-overlay{height: 27vw;}
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-women-img.jpg');
+            background-size: contain;
+        }
     }
 
     /* XL */
     @media only screen and (min-width: 1200px) {
-
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-women-img.jpg');
+        }
     }
 </style>
 
@@ -63,12 +70,12 @@
             <img src="../eddie-img-bg/img/eddie-man-sm.jpg" class="img-fluid position-absolute" alt="man-interview-img-md">
         </div> -->
         
-        <div class="col-sm-10 w-100 position-relative align-self-end p-1 p-sm-3 p-md-5">
-            <p class="lead text-left text-light overlay-text d-flex align-self-end">Effective ED treatment, developed by
+        <div class="col-sm-10 w-100 mx-lg-auto position-relative align-self-end align-self-lg-center d-lg-flex flex-lg-column justify-content-lg-center p-1 p-sm-3 p-md-5">
+            <p class="lead text-left text-light overlay-text d-flex align-self-end align-self-lg-center">Effective ED treatment, developed by
                 experts.</p>
-            <p class="lead font-weight-bold text-left text-light overlay-text d-flex align-self-end">Understanding ED
+            <p class="lead font-weight-bold text-left text-light overlay-text d-flex align-self-end align-self-lg-center">Understanding ED
                 allows men to choose more effective treatment options.</p>
-            <a class="text-center btn btn-danger d-block d-sm-inline-flex pr-5 pl-5 pt-2 pb-2 justify-content-center" href="">WATCH ED GUIDE</a>
+            <a class="text-center btn btn-danger d-block d-sm-inline-flex pr-5 pl-5 pt-2 pb-2 justify-content-center mx-lg-auto" href="">WATCH ED GUIDE</a>
         </div>
 
     </div>
