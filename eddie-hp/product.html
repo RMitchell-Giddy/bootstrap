@@ -6,18 +6,116 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"
+      ></script>
+      <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+
+        <script
+      src="https://kit.fontawesome.com/1873a9f67b.js"
+      crossorigin="anonymous"
+    ></script>
         
     <title>Eddie By Giddy</title>
 </head>
+
+<style>
+  #eddie-101 {
+  /* MD */
+  /* LG */
+  /* XL */
+}
+#eddie-101 #eddie-101-header {
+  font-weight: 700;
+  font-size: 33px;
+  line-height: 47px;
+  padding: 60px 33px 0 0;
+  color: #282828;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #eddie-101 #eddie-101-header {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  #eddie-101 #eddie-101-header {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #eddie-101 #eddie-101-header {
+    font-size: 40px;
+  }
+}
+#eddie-101 #p-eddie {
+  /* font-family: 'Slate Pro'; */
+  font-size: 33px;
+  line-height: 33px;
+  font-weight: 500;
+}
+#eddie-101 #subcontent-p {
+  /* font-family: "Slate Pro"; */
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 35px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #686f77;
+}
+#eddie-101 .plus-btn {
+  color: #8B97B4;
+  font-weight: 700;
+}
+#eddie-101 img {
+  border-radius: 28px;
+  margin-top: 70px;
+}
+#eddie-101 .card-header {
+  background-color: white;
+  border: none;
+  padding-left: 0;
+}
+#eddie-101 .get-eddie-btn {
+  margin-top: 70px;
+}
+#eddie-101 .card {
+  border: none;
+}
+#eddie-101 .eddie-btn {
+  padding-top: 70px;
+}
+#eddie-101 .eddie-cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 48px;
+  gap: 10px;
+  border-radius: 4px;
+  background-color: #F85F5E;
+  font-size: 24px;
+  letter-spacing: 2px;
+  line-height: 24px;
+  font-weight: 500;
+}/*# sourceMappingURL=eddie-101.css.map */
+</style>
 
 <body>
 
@@ -39,11 +137,11 @@
     }
 
     $(document).ready(function(){
-        // CODE TO UPDATE EDDIE BY GIDDY WEB PAGES
+        // CODE TO UPDATE EDDIE BY GIDDY PRODUCT PAGE
         let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
         let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
         let productBg = getComponent("../eddie-img-bg/product-bg.html");
-        let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
+        let accord101 = getComponent("../eddie-accordion/eddie-101-img-right.html");
         let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
         let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
@@ -54,7 +152,7 @@
         logo, 
         navBar, 
         productBg,
-        fourGrid,
+        accord101,
         goDeep,
         fsImgLeft,
         manImgBg,
