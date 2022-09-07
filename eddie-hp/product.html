@@ -24,14 +24,14 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"></script>
-
+    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-
         <script
-      src="https://kit.fontawesome.com/1873a9f67b.js"
-      crossorigin="anonymous"
-    ></script>
+        src="https://kit.fontawesome.com/1873a9f67b.js"
+        crossorigin="anonymous"
+      ></script>
+      
         
     <title>Eddie By Giddy</title>
 </head>
@@ -142,10 +142,10 @@
         let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
         let productBg = getComponent("../eddie-img-bg/product-bg.html");
         let accord101 = getComponent("../eddie-accordion/eddie-101-img-right.html");
-        let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
-        let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
+        let yourSelf = getComponent("../eddie-triple-vid/go-deeper.html");
+        let sizeFit = getComponent("../eddie-one-off/fs-full-screen-carousel-right.html");
+        // let accordInfo = getComponent("../eddie-accordion/eddie-more-info.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
-        let threeImg = getComponent("../eddie-one-off/three-img-review.html");
         let footer = getComponent("../eddie-footer/footer.html");
 
         Promise.all([
@@ -153,10 +153,10 @@
         navBar, 
         productBg,
         accord101,
-        goDeep,
-        fsImgLeft,
+        yourSelf,
+        sizeFit,
+        // accordInfo,
         manImgBg,
-        threeImg,
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
