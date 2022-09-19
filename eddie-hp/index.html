@@ -84,28 +84,29 @@
 
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
-        let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
-        let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
-        let jumboTron =  getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
-        let productBg = getComponent("../eddie-img-bg/product-bg.html");
-        let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
-        let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
-        let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
+        // let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
+        // let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
+        // let jumboTron =  getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
+        // let productBg = getComponent("../eddie-img-bg/product-bg.html");
+        let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
+        // let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
+        // let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
+        // let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
-        let threeImg = getComponent("../eddie-one-off/three-img-review.html");
-        let footer = getComponent("../eddie-footer/footer.html");
+        // let threeImg = getComponent("../eddie-one-off/three-img-review.html");
+        // let footer = getComponent("../eddie-footer/footer.html");
 
         Promise.all([
-        logo, 
-        navBar, 
-        jumboTron,
+        // logo, 
+        // navBar, 
+        // jumboTron,
         productBg,
-        fourGrid,
-        goDeep,
-        fsImgLeft,
+        // fourGrid,
+        // goDeep,
+        // fsImgLeft,
         manImgBg,
-        threeImg,
-        footer
+        // threeImg,
+        // footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
           $("body").append(values[index]);          
