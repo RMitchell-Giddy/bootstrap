@@ -134,23 +134,19 @@
         // CODE TO UPDATE EDDIE BY GIDDY PRODUCT PAGE
         let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
         let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
-        let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
-        let accord101 = getComponent("../eddie-accordion/eddie-101-img-right.html");
-        let yourSelf = getComponent("../eddie-triple-vid/go-deeper.html");
+        let fsImgRight = getComponent("../eddie-one-off/fs-full-screen-img-right.html");
+        let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
+        let useEddie = getComponent("../eddie-accordion/use-eddie-accord.html");
         let sizeFit = getComponent("../eddie-one-off/fs-full-screen-carousel-right.html");
-        // let accordInfo = getComponent("../eddie-accordion/eddie-more-info.html");
-        let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
         let footer = getComponent("../eddie-footer/footer.html");
 
         Promise.all([
         logo, 
         navBar, 
-        productBg,
-        accord101,
-        yourSelf,
+        fsImgRight,
+        fourGrid,
+        useEddie,
         sizeFit,
-        // accordInfo,
-        manImgBg,
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
