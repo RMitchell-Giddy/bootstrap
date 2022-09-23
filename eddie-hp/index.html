@@ -85,7 +85,8 @@
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
         let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
-        let navBar = getComponent("../eddie-hero/hero-two-img-right.html");
+        let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
+        let hero = getComponent("../eddie-hero/hero-two-img-right.html");
         let jumboTron =  getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
         let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
         let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
@@ -97,7 +98,8 @@
 
         Promise.all([
         logo, 
-        navBar, 
+        navBar,
+        hero, 
         jumboTron,
         productBg,
         fourGrid,
