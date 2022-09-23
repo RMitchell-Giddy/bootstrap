@@ -132,8 +132,8 @@
 
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY PRODUCT PAGE
+        let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
         let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
-        let navBar = getComponent("../eddie-nav-bar/logo-nb.html");
         let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
         let accord101 = getComponent("../eddie-accordion/eddie-101-img-right.html");
         let yourSelf = getComponent("../eddie-triple-vid/go-deeper.html");
@@ -143,8 +143,8 @@
         let footer = getComponent("../eddie-footer/footer.html");
 
         Promise.all([
-        logo, 
         navBar, 
+        logo, 
         productBg,
         accord101,
         yourSelf,
