@@ -92,22 +92,24 @@
         let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
         let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
         let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
+        let bulletImg = getComponent("../eddie-one-off/three-img-bullets.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
         let threeImg = getComponent("../eddie-one-off/three-img-review.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
-        navBar,
-        hero, 
-        jumboTron,
-        slideShow,
-        productBg,
-        fourGrid,
-        goDeep,
-        fsImgLeft,
-        manImgBg,
-        threeImg,
-        footer
+        // navBar,
+        // hero, 
+        // jumboTron,
+        // slideShow,
+        // productBg,
+        // fourGrid,
+        // goDeep,
+        // fsImgLeft,
+        bulletImg,
+        // manImgBg,
+        // threeImg,
+        // footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
           $("body").append(values[index]);          
