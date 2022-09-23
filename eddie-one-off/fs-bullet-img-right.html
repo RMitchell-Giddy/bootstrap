@@ -1,5 +1,38 @@
+<style>
+  /* circle number bullets */
+.blue-circles li:before {
+    background: #3185fc;
+}
 
-    <section class="engineered-performance bg-primary py-5 performance">
+ol.circle-number-bullets {
+    list-style: none;
+}
+
+.circle-number-bullets li {
+    counter-increment: step-counter;
+    position: relative;
+}
+
+.circle-number-bullets li:before {
+    content: counter(step-counter);
+    display: block;
+    position: absolute;
+    top: -1px;
+    /* Adjust < -number | number+ > */
+    left: -39px;
+    width: 1.75rem;
+    height: 1.75rem;
+    line-height: 1.75rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 100%;
+}
+</style>
+   
+   
+   <section class="engineered-performance bg-primary py-5 performance">
       <div class="container-fluid mx-auto row" style="max-width: 1563px">
 
         <div class="col-12 col-lg-5 col-xl-6 order-2 order-lg-1 pl-lg-4 pt-3 pt-lg-0 text-left">
