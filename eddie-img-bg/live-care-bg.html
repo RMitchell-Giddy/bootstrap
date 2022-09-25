@@ -3,6 +3,16 @@
         border-width: medium;
     }
 
+ /* LG */
+ @media only screen and (min-width: 992px) {
+    #live-care-p{
+            max-width: 370px;
+        }
+    }
+
+    
+
+    /* Code for IMAGES */
     /* XS */
     @media only screen and (max-width: 575px) {
         .img-overlay-3{height: 112vw;}
@@ -55,10 +65,10 @@
 
 <div class="container-lg img-overlay-3 d-flex px-3 my-3 my-lg-3 px-md-4 px-lg-3">
     <div class="row col-12 mx-auto rounded">
-        <div class="w-100 mx-lg-auto position-relative align-self-end align-self-lg-center d-lg-flex flex-lg-column justify-content-lg-center p-1 p-sm-3 p-md-5">
-            <p class="h2 font-weight-bold text-center text-light overlay-text d-flex align-self-lg-center">Live Care Advisor line</p>
-            <p class="lead text-white pb-3">Need help deciding if Eddie® is right for you? Speak to a licensed healthcare professional</p>
-            <a id="live-care-btn" class="col-lg-5 py-3 w-100 mx-auto text-center font-weight-bold btn btn-outline-light d-block justify-content-center mb-5 mb-lg-" href="">Start free online visit</a>
+        <div class="w-100 mx-lg-auto position-relative align-self-end align-self-lg-center d-lg-flex flex-lg-column p-1 p-sm-3 p-md-5">
+            <p class="align-self-lg-end d-flex font-weight-bold h2 overlay-text text-center text-light">Live Care Advisor line</p>
+            <p id="live-care-p" class="align-self-lg-end ml-auto text-left text-white ">Need help deciding if Eddie® is right for you? Speak to a licensed healthcare professional</p>
+            <a id="live-care-btn" class="btn btn-outline-light col-lg-5 d-block font-weight-bold ml-auto py-3 mb-3 mb-lg-0 text-center w-100" href="">Start free online visit</a>
         </div>
     </div>
 </div>
