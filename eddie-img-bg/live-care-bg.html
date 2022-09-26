@@ -1,0 +1,72 @@
+<style>
+    #live-care-btn{
+        border-width: medium;
+    }
+
+ /* LG */
+ @media only screen and (min-width: 992px) {
+    #live-care-p{
+            max-width: 370px;
+        }
+    }
+
+    /* Code for IMAGES */
+    /* XS */
+    @media only screen and (max-width: 575px) {
+        .img-overlay-3{height: 112vw;}
+        .img-overlay-3 .row{
+        background-image: url('../eddie-img-bg/img/care-advisor-xs-img.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    };
+        }
+
+    /* SM */
+    @media only screen and (min-width: 576px) {
+        .img-overlay-3{height: 86vw;}
+        /* .img-overlay-3 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-sm-img.png');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    }
+
+    /* MD */
+    @media only screen and (min-width: 768px) {
+        .img-overlay-3{height: 86vw;}
+        /* .img-overlay-3 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-md-img.png');
+         
+        }
+    }
+
+    /* LG */
+    @media only screen and (min-width: 992px) {
+        .img-overlay-3{height: 27vw;}
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-lg-img.png');
+            background-size: contain;
+        }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-img.png');
+        }
+    }
+</style>
+
+<div class="container-lg img-overlay-3 d-flex px-3 my-3 my-lg-3 px-md-4 px-lg-3">
+    <div class="row col-12 mx-auto rounded">
+        <div class="w-100 mx-lg-auto position-relative align-self-end align-self-lg-center d-lg-flex flex-lg-column p-1 p-sm-3 p-md-5">
+            <p class="align-self-lg-end d-flex font-weight-bold h2 overlay-text text-center text-light">Live Care Advisor line</p>
+            <p id="live-care-p" class="align-self-lg-end ml-auto text-left text-white ">Need help deciding if Eddie® is right for you? Speak to a licensed healthcare professional</p>
+            <a id="live-care-btn" class="btn btn-outline-light col-lg-5 d-block font-weight-bold ml-auto py-3 mb-3 mb-lg-0 text-center w-100" href="">Start free online visit</a>
+        </div>
+    </div>
+</div>
