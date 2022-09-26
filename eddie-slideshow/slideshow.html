@@ -1,71 +1,18 @@
 <style>
-  /* Circle Buttons for Carousel */
-  #ss-btn {
-    max-width: 9%;
-    height: 23px;
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon{
+      width: 40px;
+      height: 40px;
+      background-image: url('../eddie-pdp/img/slider-control.png');
   }
-         /* LG */
-        @media only screen and (min-width: 992px) {
-            #ss-btn{
-              max-width: 3%;
-              height: 21px;
-            }
-        }
-
-  #ss-btn-1 {
-    max-width: 9%;
-    height: 23px;
+  .carousel-control-next-icon{
+    transform: rotate(180deg);
   }
-      /* LG */
-      @media only screen and (min-width: 992px) {
-            #ss-btn-1{
-              max-width: 3%;
-              height: 21px;
-            }
-        }
-  #ss-btn-2 {
-    max-width: 9%;
-    height: 23px;
+
+  .carousel-indicators li{
+    width: 13px;
+    height: 13px;
   }
-   /* LG */
-   @media only screen and (min-width: 992px) {
-            #ss-btn-2{
-              max-width: 3%;
-              height: 21px;
-            }
-        }
-  #ss-btn-3 {
-    max-width: 9%;
-    height: 23px;
-  }
-   /* LG */
-   @media only screen and (min-width: 992px) {
-            #ss-btn-3{
-              max-width: 3%;
-              height: 21px;
-            }
-        }
-
-        .carousel .carousel-indicators li {background-color: red;}
-        .carousel .carousel-indicators li.active {background-color: blue;}
-
-  /* Next and Back Buttons */
-        /* LG */
-   @media only screen and (min-width: 992px) {
-    .carousel-control-next-icon{
-              height: 12%;
-              width: 20%;
-            }
-        }
-
-          /* LG */
-   @media only screen and (min-width: 992px) {
-    .carousel-control-prev-icon{
-              height: 12%;
-              width: 20%;
-            }
-        }
-
 </style>
 
 <div class="container">
@@ -132,12 +79,12 @@
 
         <!-- CODE FOR BACK BTN -->
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span id="ss-back-btn" class="d-none d-lg-block mb-5 carousel-control-prev-icon bg-secondary rounded-circle" aria-hidden="true"></span>
+          <span id="ss-back-btn" class="d-none d-lg-block mb-5 carousel-control-prev-icon rounded-circle" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <!-- CODE FOR NEXT BTN -->
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span id="ss-next-btn" class="d-none d-lg-block mb-5 carousel-control-next-icon bg-secondary rounded-circle" aria-hidden="true"></span>
+          <span id="ss-next-btn" class="d-none d-lg-block mb-5 carousel-control-next-icon rounded-circle" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
