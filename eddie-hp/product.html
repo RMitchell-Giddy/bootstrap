@@ -133,8 +133,10 @@
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY PRODUCT PAGE
         let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
-        let logo =  getComponent("../eddie-nav-bar/logo-nb.html");
-        let productBg = getComponent("../eddie-img-bg/live-care-bg.html");
+        let pdpSlider =  getComponent("../eddie-pdp/slider-left-info-right.html");
+        let reviews =  getComponent("../eddie-pdp/eddie-reviews.html");
+        let witb =  getComponent("../eddie-pdp/whats-in-the-box.html");
+        let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
         let accord101 = getComponent("../eddie-accordion/eddie-101-img-right.html");
         let gifImg = getComponent("../eddie-img-bg/gif-bg.html");
         let yourSelf = getComponent("../eddie-triple-vid/see-your-self.html");
@@ -145,14 +147,16 @@
 
         Promise.all([
         navBar, 
-        logo, 
+        pdpSlider, 
         productBg,
         accord101,
         gifImg,
         yourSelf,
         sizeFit,
         moreInfo,
+        witb,
         manImgBg,
+        reviews,
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {

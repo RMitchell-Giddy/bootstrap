@@ -1,0 +1,380 @@
+<div class="container mt-5" id="cust-reviews">
+    <div class="cr-header">
+        <h1 class="cr-title text-center">Customer Reviews</h1>
+        <p class="text-center">
+            There's a reason Eddie<sup>&reg;</sup> has been 
+            delivered more than 5 million times. <span class="blue italic">It works</span>
+        </p>
+    </div>
+    <div class="cr-append-here">
+        <div class="cr-review-container col-12 border-bottom py-4">
+            <div class="d-flex w-100 justify-content-between cr-review-info">
+                <div class="d-flex cr-user-info mb-4">
+                    <div class="cr-user-icon mr-3 bg-secondary rounded-circle p-2 text-center text-light cr-user-initital" style="width: 49px; height: 49px; line-height: 200%; flex: 1 0 auto;">S</div>
+                    <div class="cr-user-name-stars mr-3">
+                        <img class="d-block" src="../eddie-pdp/img/red-stars.png" alt="star-reviews" width="90" height="14" width="90" height="14">
+                        <p class="cr-user-name d-inline m-0">Stephen</p>
+                        <span class="cr-verification d-inline-flex ml-3 align-content-center">
+                            <span class="d-flex align-items-center">
+                                <img src="https://giddywebhosting.blob.core.windows.net/image-assets/verified-check.png" alt="blue check mark" class="cr-check" width="15" height="15">
+                                <span class="blue">Verified</span>
+                            </span>
+                        </span>
+                        <p class="cr-user-age m-0"></p>
+                    </div>                    
+                </div>
+                <div class="cr-date">
+                    <span class="cr-user-date">02/27/22</span>
+                </div>
+            </div>
+            <h5 class="cr-review-title font-weight-bold">The product works as advertised</h5>
+            <p class="cr-review-body m-0">
+                5-star product. Pricey but worth it. Has solved my ED. Works so effectively. 
+                No fuss nor hassle. Easy to use and very adaptable. Have not purchased Viagra 
+                since and the monies I saved by using Eddie. Never knew that a C-ring could 
+                be so comfortable. Innovators had the right and greatest conception. A high 
+                5 to them
+            </p>
+        </div>
+    </div>
+
+    <div class="cr-pagination d-flex mt-3 justify-content-between">
+        <span class="cr-pag-prev text-secondary" id="prev">&#x3C;</span>
+        <div class="cr-pages d-flex justify-content-around w-75">
+        </div>
+        <span class="cr-pag-next text-secondary" id="next">&#x3E;</span>
+    </div>
+</div>
+<style>
+    .cr-active{
+        color: #000 !important;
+    }
+    .cr-page-num:hover, .cr-pag-next:hover, .cr-pag-prev:hover{
+        cursor: pointer;
+    }
+    .star-rating-4{
+        content: url('../eddie-pdp/img/4stars.svg');
+        width: fit-content;
+    }
+    .star-rating-3{
+        content: url('../eddie-pdp/img/3stars.svg');
+        width: fit-content;
+    }
+</style>
+<script>
+    // TrustPilot Review Slider LANDING PAGE STYLE
+    let reviewJSON = [];
+    let reviewRange = 0;
+    let reviewPage = 0;
+    let reviewContainer = $(".cr-append-here");
+
+    let navNext = $("#next");
+    let navPrev = $("#prev");
+    let navBulletContainer = $(".cr-pages");
+    let navBullets;
+
+    const approvedReviews =
+        "https://prod-27.northcentralus.logic.azure.com:443/workflows/c457e671d82744a4a45288431f09bd78/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=rLY-uttOoOhM49X40o1_-v8gItNsRz_7VsdAOziCQfQ";
+
+    fetch(approvedReviews, {
+        method: "post",
+        body: JSON.stringify([
+            {
+                reviewId: null,
+            },
+        ]),
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        //No longer needed
+        //getReviews(data);
+        reviewJSON = data.reverse();
+        
+        setUpReviewNav();
+        pageReviews('F');
+    });
+
+    function displayNextReviews(iterator){
+        console.log('Iterator in function = ' + iterator);
+        var endI = iterator + 5;
+        if(endI > reviewJSON.length){
+            endI = reviewJSON.length;
+        }
+        
+        //Spit reviews to page
+        for (var i = iterator; i < endI; i++) {
+            console.log('In for loop');
+            try{
+            var index = reviewJSON[i].text.indexOf(" ", 200);
+            var subStr =
+                reviewJSON[i].text.length >= 200
+                    ? reviewJSON[i].text.substring(0, index) + "..."
+                    : reviewJSON[i].text;
+
+            var stars = reviewJSON[i].stars;
+            var starsClass =
+                stars == 5
+                    ? "star-rating-5"
+                    : stars == 4
+                        ? "star-rating-4"
+                        : stars == 3
+                            ? "star-rating-3"
+                            : "";
+
+            $(reviewContainer).append(`
+            <div class="cr-review-container col-12 border-bottom py-4">
+            <div class="d-flex w-100 justify-content-between cr-review-info">
+                <div class="d-flex cr-user-info mb-4">
+                    <div class="cr-user-icon mr-3 bg-secondary rounded-circle p-2 text-center text-light cr-user-initital" style="width: 49px; height: 49px; line-height: 200%; flex: 1 0 auto;">${reviewJSON[i].reviewerName[0]}</div>
+                    <div class="cr-user-name-stars mr-3">
+                        <img class="star ${starsClass} d-block" src="../eddie-pdp/img/red-stars.png" alt="star-reviews" width="90" height="14">
+                        <p class="cr-user-name d-inline m-0">${reviewJSON[i].reviewerName}</p>
+                        <span class="cr-verification d-inline-flex ml-3 align-content-center">
+                            <span class="d-flex align-items-center">
+                                <img src="https://giddywebhosting.blob.core.windows.net/image-assets/verified-check.png" alt="blue check mark" class="cr-check" width="15" height="15">
+                                <span class="blue">Verified</span>
+                            </span>
+                        </span>
+                        <p class="cr-user-age m-0"></p>
+                    </div>                    
+                </div>
+                <div class="cr-date">
+                    <span class="cr-user-date">${reviewJSON[i].createdAt}</span>
+                </div>
+            </div>
+            <h5 class="cr-review-title font-weight-bold">${reviewJSON[i].title}</h5>
+            <p class="cr-review-body m-0">
+                ${subStr}
+            </p>
+        </div>`);
+    }
+    catch(e){
+        console.log(e.message);
+    }
+        }
+    }
+    function displayPrevReviews(iterator){        
+        var endI = iterator - 5;
+        if(endI < 0){
+            endI = 0;
+        }
+
+        //Spit reviews to page
+        for (var i = endI; i < iterator; i++) {            
+            var index = reviewJSON[i].text.indexOf(" ", 200);
+            var subStr =
+                reviewJSON[i].text.length >= 200
+                    ? reviewJSON[i].text.substring(0, index) + "..."
+                    : reviewJSON[i].text;
+
+            var stars = reviewJSON[i].stars;
+            var starsClass =
+                stars == 5
+                    ? "star-rating-5"
+                    : stars == 4
+                        ? "star-rating-4"
+                        : stars == 3
+                            ? "star-rating-3"
+                            : "";
+
+                            $(reviewContainer).append(`
+                            <div class="cr-review-container col-12 border-bottom py-4">
+                                <div class="d-flex w-100 justify-content-between cr-review-info">
+                                    <div class="d-flex cr-user-info mb-4">
+                                        <div class="cr-user-icon mr-3 bg-secondary rounded-circle p-2 text-center text-light cr-user-initital"
+                                            style="width: 49px; height: 49px; line-height: 200%; flex: 1 0 auto;">
+                                            ${reviewJSON[i].reviewerName[0]}</div>
+                                        <div class="cr-user-name-stars mr-3">
+                                            <img class="star ${starsClass} d-block" src="../eddie-pdp/img/red-stars.png" alt="star-reviews" width="90" height="14">
+                                            <p class="cr-user-name d-inline m-0">${reviewJSON[i].reviewerName}</p>
+                                            <span class="cr-verification d-inline-flex ml-3 align-content-center">
+                                                <span class="d-flex align-items-center">
+                                                    <img src="https://giddywebhosting.blob.core.windows.net/image-assets/verified-check.png" alt="blue check mark" class="cr-check" width="15" height="15">
+                                                    <span class="blue">Verified</span>
+                                                </span>
+                                            </span>
+                                            <p class="cr-user-age m-0"></p>
+                                        </div>
+                                    </div>
+                                    <div class="cr-date">
+                                        <span class="cr-user-date">${reviewJSON[i].createdAt}</span>
+                                    </div>
+                                </div>
+                                <h5 class="cr-review-title font-weight-bold">${reviewJSON[i].title}</h5>
+                                <p class="cr-review-body m-0">
+                                    ${subStr}
+                                </p>
+                            </div>`);
+        }
+    }
+    
+
+    function getReviews(data){
+        // Filter through review db and grab selected_a (checked) reviews
+        var selectedReviews = [];
+        for (var i = 0; i < data.length; i++) {
+            data[i].selected_a == "True" ? selectedReviews.push(data[i]) : null;
+        }
+        reviewJSON = selectedReviews;
+    }
+
+    function pageReviews(dir){
+        $(reviewContainer).empty();
+
+    //console.log('Curent iterator before: ' + reviewRange);
+    if(dir == 'F'){
+        displayNextReviews(reviewRange);
+
+            //Update Iterator
+            reviewRange = updateReviewRange('F');
+        }else{
+
+            if(reviewRange != 0)
+            displayPrevReviews(reviewRange);
+
+            reviewRange = updateReviewRange('P');
+        }
+
+    //console.log('Curent iterator after: ' + reviewRange);
+    }
+
+    function updateReviewRange(dir, rI = -1, oRR = -1){
+        //console.log(`Index = ${rI} \n Original range is ${oRR}\nCurent Range = ${reviewRange}`);
+        if(rI != -1){
+            if(reviewRange < oRR){
+                reviewRange+=5;
+                if(reviewRange >= reviewJSON.length){
+                    reviewRange = reviewJSON.length;
+                    reviewRange-=(reviewRange%5);
+                }
+            }
+            else{
+                if(dir == 'F'){
+                    //Update Iterator
+                    reviewRange+=5;
+                    if(reviewRange >= reviewJSON.length){
+                        reviewRange = reviewJSON.length;
+                        reviewRange-=(reviewRange%5);
+                    }
+                }else if(dir == 'P'){
+                    reviewRange-=5;
+                    if(reviewRange <= 5){
+                        reviewRange = 5;
+                    }
+                    if(reviewRange == reviewJSON.length){
+                        var mod = reviewJSON.length % 5;
+                        reviewRange-=mod;
+                    }
+                }
+            }
+
+            return reviewRange;
+        }
+    }
+        
+    function setUpReviewNav(){
+        let count = Math.floor(reviewJSON.length/5);
+        if(reviewJSON.length % 5 != 0){
+            count++;
+        }
+
+        if(count > 0){
+            $(navBulletContainer).append(`<span class="cr-page-num text-secondary cr-active">1</span>`);
+
+            for (let i = 1; i < count; i++) {
+                $(navBulletContainer).append(`<span class="cr-page-num text-secondary">${i+1}</span>`);
+            }
+
+            navBullets = $(".cr-pages .cr-page-num"); 
+            
+            $(navBullets).on('click', function(){
+                let index = $(navBullets).index(this);
+    
+                //Set iterator
+                let origRR = reviewRange;
+                reviewRange = index*5;
+                //console.log('Review Range Var Before Loop = ' + reviewRange);
+    
+                //Set active number
+                Array.from($(navBullets)).forEach(li => {
+                    $(li).removeClass('cr-active');
+                });
+                reviewPage = index;
+                $(navBullets[reviewPage]).addClass('cr-active');
+    
+                //Show results
+                $(reviewContainer).empty();
+                displayNextReviews(reviewRange);
+    
+                //Set iterator
+                reviewRange = updateReviewRange('',index, origRR);
+    
+                //console.log('Review Range Var After Loop = ' + reviewRange);
+            });
+
+            
+        }
+    }
+
+    function getIndex(){
+        //Gets index of current page
+        let navBullets = $(".cr-pages .cr-page-num");
+        let taget = $(".cr-pages .cr-page-num.cr-active"); 
+        return  $(navBullets).index(taget);
+    }
+
+    $(navNext).on('click', () =>{
+        //pageReviews('F');
+
+        reviewPage++;
+        if(reviewPage > ($(navBullets).length-1))
+        reviewPage = $(navBullets).length-1;
+
+        Array.from($(navBullets)).forEach(li => {
+            $(li).removeClass('cr-active');
+        });
+
+        $(navBullets[reviewPage]).addClass('cr-active');
+
+        //Get index and set review range
+        let index = getIndex();
+        let origRR = reviewRange;
+        reviewRange = index*5;
+
+        //Show results
+        $(reviewContainer).empty();
+        console.log('Review range = ' + reviewRange);
+        displayNextReviews(reviewRange);
+
+        //Set iterator
+        reviewRange = updateReviewRange('',index, origRR);
+    });
+    $(navPrev).on('click', () =>{
+        //pageReviews('P');
+
+        reviewPage--;
+        if(reviewPage < 0)
+        reviewPage = 0;
+
+        Array.from($(navBullets)).forEach(li => {
+            $(li).removeClass('cr-active');
+        });
+
+        $(navBullets[reviewPage]).addClass('cr-active');
+
+        //Get index and set review range
+        let index = getIndex();
+        let origRR = reviewRange;
+        reviewRange = index*5;
+
+        //Show results
+        $(reviewContainer).empty();
+        displayNextReviews(reviewRange);
+
+        //Set iterator
+        reviewRange = updateReviewRange('',index, origRR);
+    });
+</script>
