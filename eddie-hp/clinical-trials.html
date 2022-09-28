@@ -86,25 +86,15 @@
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
         let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
         let hero = getComponent("../eddie-hero/hero-three-img-right.html");
-        let jumboTron =  getComponent("../eddie-feat-icon/jumbo-tron-icons.html");
-        let productBg = getComponent("../eddie-img-bg/product-man-bg.html");
-        let fourGrid = getComponent("../eddie-grid/eddie-four-img-grid.html");
-        let goDeep = getComponent("../eddie-triple-vid/go-deeper.html");
-        let fsImgLeft = getComponent("../eddie-one-off/fs-full-screen-img-left.html");
-        let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
-        let threeImg = getComponent("../eddie-one-off/three-img-review.html");
+        let results = getComponent("../eddie-text/results-txt.html");
+        let purpose = getComponent("../eddie-text/purpose-txt.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
         navBar, 
-        hero, 
-        jumboTron,
-        productBg,
-        fourGrid,
-        goDeep,
-        fsImgLeft,
-        manImgBg,
-        threeImg,
+        hero,
+        results, 
+        purpose, 
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
