@@ -87,12 +87,16 @@
         let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
         let hero = getComponent("../eddie-hero/hero-three-img-right.html");
         let results =  getComponent("../eddie-one-off/text-left-color-text-right.html");
+        let resultsTxt = getComponent("../eddie-text/results-txt.html");
+        let purpose = getComponent("../eddie-text/purpose-txt.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
         navBar, 
         hero,
         results,
+        resultsTxt, 
+        purpose, 
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
