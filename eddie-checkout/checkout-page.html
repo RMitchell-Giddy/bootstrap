@@ -31,7 +31,7 @@
     <div class="card border-left-0 border-right-0 border-top-0">
       <div class="card-header bg-white" id="headingOne">
         <h2 class="mb-0">
-          <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="btn btn-block text-left font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             Customer
           </button>
         </h2>
@@ -100,7 +100,7 @@
     <div class="card border-left-0 border-right-0">
       <div class="card-header bg-white" id="headingTwo">
         <h2 class="mb-0">
-          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
             Shipping
           </button>
         </h2>
@@ -113,17 +113,21 @@
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationCustom01">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                <input type="text" class="form-control" id="validationCustom01" value="Allan" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationCustom02">Last name</label>
-                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                <input type="text" class="form-control" id="validationCustom02" value="Hillman" required>
                 <div class="valid-feedback">
                   Looks good!
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Phone Number (Optional)</label>
+                <input type="text" class="form-control">
               </div>
             </div>
             <div class="form-row">
@@ -135,10 +139,58 @@
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="validationCustom04">State</label>
+                <label for="validationCustom04">State/Province</label>
                 <select class="custom-select" id="validationCustom04" required>
-                  <option selected disabled value="">Choose...</option>
-                  <option>...</option>
+                  <option selected disabled value="">Select State</option>
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option>Arizona</option>
+                  <option>Arkansas</option>
+                  <option>California</option>
+                  <option>Colorado</option>
+                  <option>Connecticut</option>
+                  <option>Delaware</option>
+                  <option>Florida</option>
+                  <option>Georgia</option>
+                  <option>Hawaii</option>
+                  <option>Idaho</option>
+                  <option>Illinois</option>
+                  <option>Indiana</option>
+                  <option>Iowa</option>
+                  <option>Kansas</option>
+                  <option>Kentucky</option>
+                  <option>Louisiana</option>
+                  <option>Maine</option>
+                  <option>Maryland</option>
+                  <option>Massachusetts</option>
+                  <option>Michigan</option>
+                  <option>Minnesota</option>
+                  <option>Mississippi</option>
+                  <option>Montana</option>
+                  <option>Nebraska</option>
+                  <option>Nevada</option>
+                  <option>New Hampshire</option>
+                  <option>New Jersey</option>
+                  <option>New Mexico</option>
+                  <option>New York</option>
+                  <option>North Carolina</option>
+                  <option>North Dakota</option>
+                  <option>Ohio</option>
+                  <option>Oklahoma</option>
+                  <option>Oregon</option>
+                  <option>Pennslyvania</option>
+                  <option>Rhode Island</option>
+                  <option>South Carolina</option>
+                  <option>South Dakota</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option>Utah</option>
+                  <option>Vermont</option>
+                  <option>Virginia</option>
+                  <option>Washington</option>
+                  <option>West Virginia</option>
+                  <option>Wisconsin</option>
+                  <option>Wyoming</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid state.
@@ -156,14 +208,14 @@
               <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                 <label class="form-check-label" for="invalidCheck">
-                  Agree to terms and conditions
+                  My Billing address is the same as my Shipping address
                 </label>
                 <div class="invalid-feedback">
                   You must agree before submitting.
                 </div>
               </div>
             </div>
-            <button class="btn btn-primary" type="submit">Submit form</button>
+            <a class="col-12 btn btn-dark" type="submit">Continue</a>
           </form>
           
           <script>
@@ -194,7 +246,7 @@
     <div class="card border-left-0 border-right-0">
       <div class="card-header bg-white" id="headingThree">
         <h2 class="mb-0">
-          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
             Billing
           </button>
         </h2>
@@ -208,7 +260,7 @@
     <div class="card border-left-0 border-right-0 border-bottom-0">
       <div class="card-header bg-white" id="headingFour">
         <h2 class="mb-0">
-          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <button class="btn btn-block text-left collapsed font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             Payment
           </button>
         </h2>
