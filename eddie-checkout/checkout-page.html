@@ -1,26 +1,91 @@
  <div class="container-fluid bg-light">
-  <div class="container">
  <!-- LOGO NAV-BAR STARTS -->
- <nav class="navbar navbar-light">
-    <a class="navbar-brand mx-auto mx-md-0 mr-md-auto py-3 py-sm-4 pl-md-4" href="https://eddiebygiddy.com/">
+ <nav class="navbar navbar-light container-lg">
+    <a class="navbar-brand mx-auto mx-lg-0 mr-lg-auto py-3 py-sm-4 pl-lg-4" href="https://eddiebygiddy.com/">
       <img class="" id="ed-head" src="https://giddywebhosting.blob.core.windows.net/image-assets/eddie-logo-dark.svg"
         width="210" height="auto" alt="eddie-by-giddy-logo" />
     </a>
   </nav>
+</div>
   <!-- LOGO NAV-BAR ENDS -->
-
+  <div class="container bg-white">
   <!-- Code for Images -->
-  <div class="row mx-auto d-lg-none">
+  <div class="row mx-auto d-lg-none text-center py-4">
     <div class="col-4">
-      <p class="font-weight-bold">Free Shipping (5-7 Days*)</p>
+      <img class="rounded-circle" src="https://via.placeholder.com/50" alt="shipping-alt-img">
+      <p class="pt-2">Free Shipping (5-7 Days*)</p>
     </div>
     <div class="col-4">
-      <p class="font-weight-bold">Free Resizes</p>
+      <img class="rounded-circle"  src="https://via.placeholder.com/50" alt="shipping-alt-img">
+      <p class="pt-2">Free Resizes</p>
     </div>
     <div class="col-4">
-      <p class="font-weight-bold">Money-Back Guarantee</p>
+      <img class="rounded-circle"  src="https://via.placeholder.com/50" alt="shipping-alt-img">
+      <p class="pt-2">Money-Back Guarantee</p>
     </div>
   </div>
   <!-- Code for Images Ends -->
-</div>
+
+  <!-- Code for Accordion -->
+  <div class="accordion py-5" id="accordionExample">
+    <div class="card border-left-0 border-right-0 border-top-0">
+      <div class="card-header bg-white" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Customer
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
+        </div>
+      </div>
+    </div>
+    <div class="card border-left-0 border-right-0">
+      <div class="card-header bg-white" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Shipping
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          Some placeholder content for the second accordion panel. This panel is hidden by default.
+        </div>
+      </div>
+    </div>
+    <div class="card border-left-0 border-right-0">
+      <div class="card-header bg-white" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Billing
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+        </div>
+      </div>
+    </div>
+    <div class="card border-left-0 border-right-0 border-bottom-0">
+      <div class="card-header bg-white" id="headingFour">
+        <h2 class="mb-0">
+          <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Payment
+          </button>
+        </h2>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+        <div class="card-body">
+          And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Code for Accordion Ends -->
+
 </div>
