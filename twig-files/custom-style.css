@@ -499,14 +499,19 @@ ol.circle-number-bullets {
   }
     /*#endregion  Slider Left Info Right */
 
-     /*#region   */ 
-    /*#endregion  */
-
-     /*#region   */ 
-    /*#endregion  */
-
-     /*#region   */ 
-    /*#endregion  */
-
-     /*#region   */ 
-    /*#endregion  */
+     /*#region  Eddie Reviews */
+     .cr-active{
+      color: #000 !important;
+  }
+  .cr-page-num:hover, .cr-pag-next:hover, .cr-pag-prev:hover{
+      cursor: pointer;
+  }
+  .star-rating-4{
+      content: url('../eddie-pdp/img/4stars.svg');
+      width: fit-content;
+  }
+  .star-rating-3{
+      content: url('../eddie-pdp/img/3stars.svg');
+      width: fit-content;
+  } 
+    /*#endregion  Eddie Reviews */
