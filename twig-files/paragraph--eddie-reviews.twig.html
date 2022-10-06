@@ -1,0 +1,101 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+    <div class="container mt-5" id="cust-reviews">
+      <div class="cr-header">
+          <h1 class="cr-title text-center">Customer Reviews</h1>
+          <p class="text-center">
+              There's a reason Eddie<sup>&reg;</sup> has been 
+              delivered more than 5 million times. <span class="blue italic">It works</span>
+          </p>
+      </div>
+      <div class="cr-append-here">
+          <div class="cr-review-container col-12 border-bottom py-4">
+              <div class="d-flex w-100 justify-content-between cr-review-info">
+                  <div class="d-flex cr-user-info mb-4">
+                      <div class="cr-user-icon mr-3 bg-secondary rounded-circle p-2 text-center text-light cr-user-initital" style="width: 49px; height: 49px; line-height: 200%; flex: 1 0 auto;">S</div>
+                      <div class="cr-user-name-stars mr-3">
+                          <img class="d-block" src="../eddie-pdp/img/red-stars.png" alt="star-reviews" width="90" height="14" width="90" height="14">
+                          <p class="cr-user-name d-inline m-0">Stephen</p>
+                          <span class="cr-verification d-inline-flex ml-3 align-content-center">
+                              <span class="d-flex align-items-center">
+                                  <img src="https://giddywebhosting.blob.core.windows.net/image-assets/verified-check.png" alt="blue check mark" class="cr-check" width="15" height="15">
+                                  <span class="blue">Verified</span>
+                              </span>
+                          </span>
+                          <p class="cr-user-age m-0"></p>
+                      </div>                    
+                  </div>
+                  <div class="cr-date">
+                      <span class="cr-user-date">02/27/22</span>
+                  </div>
+              </div>
+              <h5 class="cr-review-title font-weight-bold">The product works as advertised</h5>
+              <p class="cr-review-body m-0">
+                  5-star product. Pricey but worth it. Has solved my ED. Works so effectively. 
+                  No fuss nor hassle. Easy to use and very adaptable. Have not purchased Viagra 
+                  since and the monies I saved by using Eddie. Never knew that a C-ring could 
+                  be so comfortable. Innovators had the right and greatest conception. A high 
+                  5 to them
+              </p>
+          </div>
+      </div>
+  
+      <div class="cr-pagination d-flex mt-3 justify-content-between">
+          <span class="cr-pag-prev text-secondary" id="prev">&#x3C;</span>
+          <div class="cr-pages d-flex justify-content-around w-75">
+          </div>
+          <span class="cr-pag-next text-secondary" id="next">&#x3E;</span>
+      </div>
+  </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

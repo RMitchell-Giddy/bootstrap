@@ -409,11 +409,95 @@ ol.circle-number-bullets {
 
     /*#region  Jumbo Tron Icons */ 
    
-    /*#region   */ 
-    /*#endregion  */
+    /*#region  Whats in the Box */
+    @media only screen and (min-width: 992px) {
+      #witb-img{
+          content: url('../eddie-pdp/img/Flat-lay-desktop.png');
+      }
+  } 
+    /*#endregion Whats in the Box */
 
-     /*#region   */ 
-    /*#endregion  */
+     /*#region  Slider Left Info Right */
+     #pdp-slider-pag-1{
+      background-image: url('../eddie-pdp/img/1st-image.png');
+      background-size: contain;
+  }
+  #pdp-slider-pag-2{
+      background-image: url('../eddie-pdp/img/2nd-image.jpg');
+      background-size: contain;
+  }
+  #pdp-slider-pag-3{
+      background-image: url('../eddie-pdp/img/3rd-image.gif');
+      background-size: contain;
+  }
+  #pdp-slider-pag-4{
+      background-image: url('../eddie-pdp/img/4th-image.jpg');
+      background-size: contain;
+  }
+  #pdp-slider-pag-5{
+      background-image: url('../eddie-pdp/img/5th-image.jpg');
+      background-size: contain;
+  }
+
+  #pdp-slider-acc .card-header {
+      background-color: white;
+      border: none;
+      padding-left: 0;
+  }
+  #pdp-slider-acc .card {
+      border: none;
+  }
+  .fas{
+      color: #5286F7;
+      font-size: 1em;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon{
+      width: 40px;
+      height: 40px;
+      background-image: url('../eddie-pdp/img/slider-control.png');
+  }
+  .carousel-control-next-icon{
+    transform: rotate(180deg);
+  }
+  /* SM */
+  @media only screen and (min-width: 576px){
+      
+  }
+
+  /* MD */
+  @media only screen and (min-width: 768px) {
+      
+  }
+
+  /* LG */
+  @media only screen and (min-width: 992px) {
+      .pdp-slider-inner{
+          border-radius: 15px;
+      }        
+
+      .carousel-indicators{
+          bottom: -120px;
+      }
+
+      .carousel-indicators li{
+          width: 7vw;
+          height: 7vw;
+
+          max-width: 84px;
+          max-height: 84px;
+
+          flex: 1 0 auto;
+          background-color: #aaa;
+      }
+  }
+
+  /* XL */
+  @media only screen and (min-width: 1200px) { 
+
+  }
+    /*#endregion  Slider Left Info Right */
 
      /*#region   */ 
     /*#endregion  */
