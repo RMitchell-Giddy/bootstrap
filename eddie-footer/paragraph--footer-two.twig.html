@@ -1,0 +1,195 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      
+ <!-- FOOTER STARTS -->
+ <div class="container-fluid">
+  <!-- Footer -->
+  <footer class="text-center bg-light text-black">
+    <!-- Grid container -->
+    <div class="container-md">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <!-- Code for Coupon Section-->
+        <div class="d-flex flex-column row text-left pt-5">
+          <div class="d-flex">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+            <h3>Get a $20 off coupon code!</h3>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter your email">
+            </div>
+            <a class="btn btn-danger px-5 py-2" href="#">SUBMIT</a>
+              
+      
+      </div>
+            <div class="col-md-6 d-none d-md-block">
+               <!-- EDDIE FOOTER TEXT  -->
+               <div class="d-flex justify-content-center">
+                  <div class="ml-auto pt-3 pr-3">
+                      <div class="col-12">
+                          <!-- Code for Second Icons Starts -->
+                          <div class="d-none d-md-block">
+                            <section class="">
+                              <a href="https://www.facebook.com/EddieByGiddy" class="text-black me-4">
+                                <img style="max-width: 48px;" class="mr-2 social-icons"
+                                  src="https://giddywebhosting.blob.core.windows.net/image-assets/email-facebook-blue.png" />
+                              </a>
+                              <a href="https://twitter.com/EddieByGiddy" class="text-black me-4">
+                                <img style="max-width: 48px;" class="mr-2 social-icons"
+                                  src="https://giddywebhosting.blob.core.windows.net/image-assets/email-twitter-blue.png" />
+                              </a>
+                              <a href="https://www.instagram.com/eddiebygiddy/" class="text-black me-4">
+                                <img style="max-width: 48px;" class="mr-2 social-icons"
+                                  src="https://giddywebhosting.blob.core.windows.net/image-assets/email-instagram-blue.png" />
+                              </a>
+                              <a href="https://www.youtube.com/channel/UCESz3tl_js-ekuqGWkiFd3Q" class="text-black me-4">
+                                <img style="max-width: 48px;" class="social-icons"
+                                  src="https://giddywebhosting.blob.core.windows.net/image-assets/email-youtube-blue.png" />
+                              </a>
+                            </section>
+                          </div>
+                      </div>
+                    </div>
+               </div>
+            </div>
+      </div>
+      <div class="container mx-auto justify-content-between row">
+            <div class="row flex-column col-6 col-md-3 mt-5">
+              <h6 class="font-weight-bold">Product</h6>
+              <a class="text-dark" href="#">Eddie by Giddy</a>
+              <a class="text-dark mt-2" href="#">ED Guide Videos</a>
+              <a class="text-dark mt-2" href="#">Clinical Trials</a>
+              <a class="text-dark mt-2" href="#">Blog</a>
+          </div>
+          <div class="row flex-column col-6 col-md-3 mt-5">
+              <h6 class="font-weight-bold">Support</h6>
+              <a class="text-dark" href="#">Contact</a>
+              <a class="text-dark mt-2" href="#">FAQ</a>
+              <a class="text-dark mt-2" href="#">Shipping/Returns</a>
+              <a class="text-dark mt-2" href="#">Customer Service Tool</a>
+          </div>
+    
+            <div class="row flex-column col-6 col-md-3 mt-5">
+              <h6 class="font-weight-bold">About</h6>
+              <a class="text-dark" href="#">Reviews</a>
+              <a class="text-dark mt-2" href="#">Privacy Policy</a>
+              <a class="text-dark mt-2" href="#">Terms & Conditions</a>
+              <a class="text-dark mt-2" href="#">Cookie Preferences</a>
+          </div>
+          <div class="row flex-column col-6 col-md-3 mt-5">
+              <h6 class="font-weight-bold mw-100">Payment Methods</h6>
+              <img style="max-width: 158px" class="pt-2" src="../eddie-footer/img/Paymentmethodimages.png" alt="payment-method-img">
+          </div>
+        </div>
+        
+        </div>
+      </section>
+     
+      <!-- GET EDDIE BUTTON -->
+      <div class="row text-center d-flex justify-content-center pt-5">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+      <!-- Section: Links -->
+      <hr class="my-5" />
+      <!-- CODE AFTER TOP HEADER SECTION -->
+    </div>
+    <div class="container d-flex flex-column flex-lg-row justify-content-around">
+      <section class="container mb-5 mb-md-0 pl-lg-0">
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 text-center text-lg-left">
+            <p>
+              "This information does not constitute medical advice and it
+              should not be relied upon as such. Consult with your doctor
+              before modifying your regular medical regimen."
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Section: Social -->
+      <div class="container d-md-none">
+        <section class="text-center mb-5">
+          <a href="https://www.facebook.com/EddieByGiddy" class="text-black me-4">
+            <img class="social-icons"
+              src="https://giddywebhosting.blob.core.windows.net/image-assets/email-facebook-blue.png" />
+          </a>
+          <a href="https://twitter.com/EddieByGiddy" class="text-black me-4">
+            <img class="social-icons"
+              src="https://giddywebhosting.blob.core.windows.net/image-assets/email-twitter-blue.png" />
+          </a>
+          <a href="https://www.instagram.com/eddiebygiddy/" class="text-black me-4">
+            <img class="social-icons"
+              src="https://giddywebhosting.blob.core.windows.net/image-assets/email-instagram-blue.png" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCESz3tl_js-ekuqGWkiFd3Q" class="text-black me-4">
+            <img class="social-icons"
+              src="https://giddywebhosting.blob.core.windows.net/image-assets/email-youtube-blue.png" />
+          </a>
+        </section>
+      </div>
+
+      <!-- Copyright -->
+      <div class="container pr-lg-0">
+        <div class="text-center text-lg-right p-3 bg-light">
+          © 2022 Copyright Giddy<span class="resize-reg">®</span> | All
+          Rights Reserved.
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- FOOTER ENDS -->
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

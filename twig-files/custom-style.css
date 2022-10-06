@@ -146,14 +146,283 @@ ol.circle-number-bullets {
     }
     /*#endregion Three Img Bullets */
 
+    /*#region  Gif Bg */
+    /* XS */
+    @media only screen and (max-width: 575px) {
+        .img-overlay-4{height: 112vw;}
+        .img-overlay-4 .row{
+        background-image: url('../eddie-img-bg/img/gif-xs-img.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    };
+        }
+
+    /* SM */
+    @media only screen and (min-width: 576px) {
+        .img-overlay-4{height: 86vw;}
+        /* .img-overlay-4 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-4 .row{
+            background-image: url('../eddie-img-bg/img/gif-sm-img.png');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    }
+
+    /* MD */
+    @media only screen and (min-width: 768px) {
+        .img-overlay-4{height: 86vw;}
+        /* .img-overlay-4 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-4 .row{
+            background-image: url('../eddie-img-bg/img/gif-md-img.png');
+         
+        }
+    }
+
+    /* LG */
+    @media only screen and (min-width: 992px) {
+        .img-overlay-4{
+            height: 27vw;
+            max-height: 322px;
+        }
+        .img-overlay-4 .row{
+            background-image: url('../eddie-img-bg/img/gif-lg-img.png');
+            background-size: contain;
+        }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+        .img-overlay-4 .row{
+            background-image: url('../eddie-img-bg/img/gif-xl-img.png');
+        }
+    }
+    /*#endregion  Gif Bg */
+
+    /*#region  Live Care Bg */ 
+    #live-care-btn{
+        border-width: medium;
+    }
+
+ /* LG */
+ @media only screen and (min-width: 992px) {
+    #live-care-p{
+            max-width: 370px;
+        }
+    }
+
+    /* Code for IMAGES */
+    /* XS */
+    @media only screen and (max-width: 575px) {
+        .img-overlay-3{height: 112vw;}
+        .img-overlay-3 .row{
+        background-image: url('../eddie-img-bg/img/care-advisor-xs-img.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    };
+        }
+
+    /* SM */
+    @media only screen and (min-width: 576px) {
+        .img-overlay-3{height: 86vw;}
+        /* .img-overlay-3 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-sm-img.png');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    }
+
+    /* MD */
+    @media only screen and (min-width: 768px) {
+        .img-overlay-3{height: 86vw;}
+        /* .img-overlay-3 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-md-img.png');
+         
+        }
+    }
+
+    /* LG */
+    @media only screen and (min-width: 992px) {
+        .img-overlay-3{
+            height: 27vw;
+            max-height: 322px;
+        }
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-lg-img.png');
+            background-size: contain;
+        }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+        .img-overlay-3 .row{
+            background-image: url('../eddie-img-bg/img/care-advisor-img.png');
+        }
+    }
+
+    /*#endregion  Live Care Bg*/
+
+    /*#region  Man Women Bg */
+    /* XS */
+    @media only screen and (max-width: 575px) {
+        .img-overlay{height: 112vw;}
+        .img-overlay .row{
+        background-image: url('../eddie-img-bg/img/eddie-man-mobile-img.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    };
+        }
+
+    /* SM */
+    @media only screen and (min-width: 576px) {
+        .img-overlay{height: 86vw;}
+        /* .img-overlay img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-sm.jpg');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    }
+
+    /* MD */
+    @media only screen and (min-width: 768px) {
+        .img-overlay{height: 86vw;}
+        /* .img-overlay img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-sm.jpg');
+         
+        }
+    }
+
+    /* LG */
+    @media only screen and (min-width: 992px) {
+        .img-overlay{
+            height: 27vw;
+            max-height: 322px;
+        }
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-women-img.jpg');
+            background-size: contain;
+        }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+        .img-overlay .row{
+            background-image: url('../eddie-img-bg/img/eddie-man-women-img.jpg');
+        }
+    }
+    /*#endregion  Man Women Bg*/
+
+    /*#region  Product Man */
+    /* XS */
+    @media only screen and (max-width: 575px) {
+        .img-overlay-2{height: 112vw;}
+        .img-overlay-2 .row{
+        background-image: url('../eddie-img-bg/img/product-box-img.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    };
+        }
+
+    /* SM */
+    @media only screen and (min-width: 576px) {
+        .img-overlay-2{height: 86vw;}
+        /* .img-overlay-2 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-2 .row{
+            background-image: url('../eddie-img-bg/img/product-box-sm-img.png');
+            background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        }
+    }
+
+    /* MD */
+    @media only screen and (min-width: 768px) {
+        .img-overlay-2{height: 86vw;}
+        /* .img-overlay-2 img{content: url('../eddie-img-bg/img/eddie-man-sm.jpg')} */
+        .img-overlay-2 .row{
+            background-image: url('../eddie-img-bg/img/product-box-md-img.png');
+         
+        }
+    }
+
+    /* LG */
+    @media only screen and (min-width: 992px) {
+        .img-overlay-2{
+            height: 27vw;
+            max-height: 322px;
+        }
+        .img-overlay-2 .row{
+            background-image: url('../eddie-img-bg/img/man-product-box-img.png');
+            background-size: contain;
+        }
+    }
+
+    /* XL */
+    @media only screen and (min-width: 1200px) {
+        .img-overlay-2 .row{
+            background-image: url('../eddie-img-bg/img/man-product-box-2x-img.png');
+        }
+    }
+    /*#endregion  Product Man */
+
+    /*#region Three Img Right  */ 
+    .hero-blue-bg{
+      background-color: rgba(9, 33, 55, 1);
+    }
+    /*#endregion Three Img Right */
+
+    /*#region  Two Img RIght */ 
+    .hero-blue-bg{
+      background-color: rgba(9, 33, 55, 1);
+    }
+    /*#endregion  Two Img Right */
+
+    /*#region Eddie Four Img Grid */ 
+    @media only screen and (min-width: 576px) {
+      .hew-content div {max-width: 47%;}
+    }
+  
+    @media only screen and (min-width: 992px) {
+      .hew-content div {max-width: 23%;}
+    }
+    /*#endregion Eddie Four Img Grid */
+
+    /*#region  Eddie Eight Img Grid */ 
+    @media only screen and (min-width: 576px) {
+      .hew-content div {max-width: 47%;}
+    }
+  
+    @media only screen and (min-width: 992px) {
+      .hew-content div {max-width: 23%;}
+    }
+    /*#endregion Eddie Eight Img Grid */
+
+    /*#region  Jumbo Tron Icons */ 
+   
     /*#region   */ 
     /*#endregion  */
 
-    /*#region   */ 
+     /*#region   */ 
     /*#endregion  */
 
-    /*#region   */ 
+     /*#region   */ 
     /*#endregion  */
 
-    /*#region   */ 
+     /*#region   */ 
+    /*#endregion  */
+
+     /*#region   */ 
+    /*#endregion  */
+
+     /*#region   */ 
     /*#endregion  */
