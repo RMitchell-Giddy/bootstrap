@@ -41,12 +41,14 @@
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
         let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
+        let support = getComponent("../eddie-search/faq-support.html")
         let faq1 = getComponent("../eddie-accordion/eddie-faq-1.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
         navBar,
+        support,
         faq1,
         manImgBg,
         footer
