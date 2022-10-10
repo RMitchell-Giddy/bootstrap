@@ -1,0 +1,59 @@
+<style>
+    /* circle number bullets */
+  .blue-circles li:before {
+      background: #f85f5e;
+  }
+  
+  ol.circle-number-bullets {
+      list-style: none;
+  }
+  
+  .circle-number-bullets li {
+      counter-increment: step-counter;
+      position: relative;
+  }
+  
+  .circle-number-bullets li:before {
+      content: counter(step-counter);
+      display: block;
+      position: absolute;
+      top: -1px;
+      /* Adjust < -number | number+ > */
+      left: -39px;
+      width: 1.75rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 100%;
+  }
+  
+  </style>
+     
+            <!-- SECTION BUILDOUT BEGINS -->
+     <section class="engineered-performance py-5 performance bg-light">
+        <div class="mx-auto row" style="max-width: 1563px">
+            <!-- STARTS CODE FOR BULLET SECTION -->
+          <div class="col-12 col-lg-5 col-xl-6 order-2 order-lg-1 pl-lg-4 pt-3 pt-lg-0 text-left text-dark">
+            <h1 class="slate-pro font-size-36 font-size-xl-42">Supplements backed by science</h1>
+            <p class="slate-pro font-size-18 font-size-xl-20 text-left pt-3 pb-4">Eddies patented features are the first of their kind for an ED device. Eddie is designed to fit the anatomy of the penis and work with the natural physiology of an erection.</p>
+            <ol class="slate-pro font-size-18 font-size-xl-21 circle-number-bullets blue-circles">
+              <li class="pb-4 pl-3 pr-5">Enhancement Ridges for partner stimulation</li>
+              <li class="pb-4 pl-3 pr-5">Oval shape leaves the arteries unencumbered allowing for maximum blood flow</li>
+              <li class="pb-4 pl-3 pr-5">Tension bands provide ideal tension to fit individual needs</li>
+            </ol>
+          </div> 
+          <!-- ENDS CODE FOR BULLET SECTION -->
+          
+            <!-- STARTS CODE FOR IMAGE -->
+          <div class="d-flex justify-content-center text-center align-self-center mx-auto px-1 order-1 order-lg-2">
+              <img class="col-12 mt-lg-0" src="https://giddywebhosting.blob.core.windows.net/image-assets/engineered-for-performance-eddie.png" class="lazyload">
+          </div>
+            <!-- ENDS CODE FOR IMAGE -->
+  
+        </div>
+      </section>
+            <!-- SECTION BUILDOUT ENDS -->
+   
