@@ -475,3 +475,37 @@
          //Set iterator
          reviewRange = updateReviewRange('',index, origRR);
      });
+
+     $(function(){
+
+        //Initialize tooltips
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+        
+        $(".card-header").click(function () {
+            $(this).find("i").toggleClass("fas fa-plus fas fa-minus");
+        });
+
+        // Frequency
+        $(".dropdown-item.dd-f").click(function(){
+            //Remove active state
+            $(".dropdown-item.dd-f.active").removeClass('active');
+            $(this).addClass('active');
+
+            $(".dropdown-toggle.dd-f").text($(this).text());
+            $(".dropdown-toggle.dd-f").val($(this).text());
+        });
+
+        // Size
+        $(".dropdown-item.dd-s").click(function(){    
+            //Remove active state
+            $(".dropdown-item.dd-s.active").removeClass('active');
+            $(this).addClass('active');            
+
+            $(".dropdown-toggle.dd-s").text($(this).text());
+            $(".dropdown-toggle.dd-s").val($(this).text());
+        });
+
+    });
