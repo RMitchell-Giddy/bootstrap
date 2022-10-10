@@ -42,18 +42,12 @@
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
         let navBar =  getComponent("../eddie-nav-bar/navbar-eddie.html");
         let faq1 = getComponent("../eddie-accordion/eddie-faq-1.html");
-        let moreInfo1 = getComponent("../eddie-accordion/eddie-more-info.html");
-        let moreInfo2 = getComponent("../eddie-accordion/eddie-more-info.html");
-        let moreInfo3 = getComponent("../eddie-accordion/eddie-more-info.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
         navBar,
         faq1,
-        moreInfo1,
-        moreInfo2,
-        moreInfo3,
         manImgBg,
         footer
       ]).then((values) => {
