@@ -1,0 +1,105 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="container cust-stories">
+      <div class="col-md-12 px-0">
+        <h2>Customer Stories</h2>
+        <p>Hear from real Eddie® users about their experience.</p>
+  
+        <div class="mx-auto row d-md-flex col-md-12 px-0">
+          <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3 pl-lg-0">
+            <script src="https://fast.wistia.com/embed/medias/d6j1xgn6cp.jsonp" async=""></script>
+            <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+            <span id="chris-video"
+              class="video-box wistia_embed wistia_async_d6j1xgn6cp popover=true popoverAnimateThumbnail=true popoverContent=link"></span>
+            <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/chris-img.png"
+              alt="how-it-works-img" />
+            <h3 class="video-text text-md-left py-3">Chris</h3>
+            <p class="story-desc d-none d-lg-block cust-story-p">
+              “I noticed a difference almost immediately. Me and my partner have
+              had sex more than once a day. The spontaneity and the passion's
+              back. It's been really incredible.”
+            </p>
+          </div>
+          <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3">
+            <script src="https://fast.wistia.com/embed/medias/c7ii4t6f52.jsonp" async=""></script>
+            <div id="dr-kyle-video"
+              class="video-box wistia_embed wistia_async_c7ii4t6f52 popover=true popoverAnimateThumbnail=true popoverContent=link">
+            </div>
+            <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/dr-kyle-img.png"
+              alt="how-it-works-img" />
+            <h3 class="video-text text-md-left py-3">Dr. Chris Kyle</h3>
+            <p class="story-desc d-none d-lg-block cust-story-p">
+              “As a urologist who treats thousands of men for sexual performance
+              issues, Eddie is the best option for anyone looking for an
+              effective, pill-free ED treatment.”
+            </p>
+          </div>
+          <div class="container d-flex flex-column justify-content-between col-lg-4 col-md-4 col-sm-12 col-xs-12 py-sm-3 pr-lg-0">
+            <script src="https://fast.wistia.com/embed/medias/zakvuwo7mz.jsonp" async=""></script>
+            <div id="joe-video"
+              class="video-box wistia_embed wistia_async_zakvuwo7mz popover=true popoverAnimateThumbnail=true popoverContent=link">
+            </div>
+            <img class="" id="img-hiw" src="https://giddywebhosting.blob.core.windows.net/image-assets/joe-img.png"
+              alt="how-it-works-img" />
+            <h3 class="video-text text-md-left py-3">Joe</h3>
+            <p class="story-desc d-none d-lg-block cust-story-p"">
+                  “Eddie helped me feel more in control. I can get right into it. I
+                  can perform when I want to perform. I don’t have to psyche myself
+                  up or wait for a pill to kick in … just grab it and go.”
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
