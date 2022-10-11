@@ -44,13 +44,15 @@
         let support = getComponent("../eddie-search/faq-support.html")
         let faq1 = getComponent("../eddie-accordion/eddie-faq-1.html");
         let manImgBg = getComponent("../eddie-img-bg/man-women-bg.html");
+        let contact = getComponent("../eddie-contact/contact.html");
         let footer = getComponent("../eddie-footer/footer-two.html");
 
         Promise.all([
-        navBar,
-        support,
-        faq1,
-        manImgBg,
+        // navBar,
+        // support,
+        // faq1,
+        // manImgBg,
+        contact,
         footer
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
