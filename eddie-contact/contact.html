@@ -18,18 +18,17 @@
     <div class="col-lg-6 pt-3">
         
         <form>
-           
             <div class="form-row">
                 <div class="form-group col-12 col-md-6">
-                    <label for="inputName"></label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Full name">
+                    <label for="firstName"></label>
+                    <input type="text" class="form-control" id="firstName" placeholder="Full name">
                 </div>
               <div class="form-group col-md-6">
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email address">
+                <input type="email" class="form-control" id="eddieEmail" placeholder="Email address">
               </div>
               <div class="form-group col-md-6">
-                <label for="inputState"></label>
-                <select id="inputState" class="form-control">
+                <label for="contactReason"></label>
+                <select id="contactReason" class="form-control">
                   <option selected>Reason for contact</option>
                   <option>Sizing Issue</option>
                   <option>Order Inquiry</option>
@@ -39,16 +38,15 @@
                 </select>
               </div>
               <div class="form-group col-md-6">
-                <label for="inputSubject"></label>
-                <input type="Subject" class="form-control" id="inputSubject" placeholder="Subject">
+                <label for="userSubject"></label>
+                <input type="Subject" class="form-control" id="userSubject" placeholder="Subject">
               </div>
             </div>
             <div class="form-group">
-              <label for="inputAddress2">Address 2</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
+                <label for="userMessage"></label>
+                <textarea class="form-control" id="userMessage" rows="3" placeholder="Description of issue"></textarea>
+              </div>
           </form>
-
         <a class="btn btn-danger px-4" href="#">SUBMIT</a>
     </div>
 </div>   
