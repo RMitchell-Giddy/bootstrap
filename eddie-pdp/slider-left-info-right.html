@@ -92,7 +92,34 @@
       <!-- Buttons -->
       <div class="checkout-btns">
         <a href="https://eddiebygiddy.com/cart.php?action=buy&sku=EDDIE-11-110-1-4m-SUB" class="checkout-btn col-12 d-block btn btn-danger mb-3 py-3">CHECKOUT</a>
-        <a href="#" class="find-my-size-btn col-12 d-block btn btn-outline-primary py-3">FIND MY SIZE</a>
+        <!-- Modal Trigger Button -->
+        <a href="#" class="find-my-size-btn col-12 d-block btn btn-outline-primary py-3" data-toggle="modal" data-target="#exampleModal">FIND MY SIZE</a>
+        <!-- Modal Code Begins -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-secondary">
+                  <h5 class="modal-title text-white text-center mx-auto" id="exampleModalLabel">Answer 3 quick questions to find your Eddie size.</h5>
+                  <!-- <p class="font-italic">This process is safe, secure, and private.</p> -->
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="text-white">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <h5 class="text-center font-weight-bold">STEP 1</h5>
+                  <p class="text-center">How often do you have difficulty achieving or maintaining an erection?</p>
+                    <div class="text-center mx-auto"> 
+                      <a class="btn btn-outline-primary text-dark font-weight-bold text-left px-3 py-4" href="">Infrequently
+                        <p class="font-italic font-weight-light text-secondary">Less than half the time.</p>
+                      </a>
+                      <a class="btn btn-outline-primary text-dark font-weight-bold text-left ml-3 px-3 py-4" href="">Frequently
+                        <p class="font-italic font-weight-light text-secondary">Less than half the time.</p>
+                      </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
 
       <!-- Info Accordion -->
