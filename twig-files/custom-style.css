@@ -822,8 +822,681 @@ ol.circle-number-bullets {
     }
     /*#endregion Eddie Reviews */
 
-    /*#region   */
-    /*#endregion   */
+    /*#region  FAQ/Support  */
+.support-style input, .support-style textarea, .support-style button, .support-style select, .support-style a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.support-style .mid-width-layout {
+  width: 90%;
+}
+@media (min-width: 801px) {
+  .support-style .mid-width-layout {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1065px) {
+  .support-style .mid-width-layout {
+    width: 60%;
+  }
+}
+.support-style .button-box {
+  width: 60%;
+  display: block;
+  margin-top: 2rem;
+}
+.support-style .button-box .faq-nav {
+  text-align: center;
+  width: 100%;
+}
+.support-style .button-box .faq-nav a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 32px;
+}
+.support-style .button-box .faq-nav a::after {
+  content: "|";
+  margin: 0px 15px;
+}
+.support-style .button-box .faq-nav a:last-child::after {
+  content: "";
+  margin: none;
+}
+@media (min-width: 801px) {
+  .support-style .button-box .faq-nav a {
+    font-size: 21px;
+    line-height: 22px;
+  }
+}
+.support-style .button-box .faq-nav a.active {
+  font-weight: 700;
+}
+.support-style .button-box .faq-nav a:focus {
+  color: #333;
+}
+.support-style .button-box button {
+  transition: 0.03s;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #8B97B4;
+  border-bottom: 3px solid #6B7389;
+}
+@media (min-width: 1261px) {
+  .support-style .button-box button {
+    font-size: 18px;
+  }
+}
+.support-style .button-box button:hover {
+  color: #27366A;
+  transition: 0.03s;
+}
+.support-style .button-box .one-fourth {
+  width: 25%;
+  padding: 1em 0em;
+}
+.support-style .mobile-button-box:after {
+  content: "▾";
+  color: #5286F7;
+  right: 10px;
+  top: 0px;
+  padding: 12px 0px 0px 8px;
+  position: absolute;
+  pointer-events: none;
+}
+.support-style .mobile-button-box {
+  width: 285px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+  margin-top: 3em;
+  display: none;
+}
+.support-style .mobile-button-box select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  height: 50px;
+  margin: 1em auto;
+  padding: 0px 24px;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+.support-style .mobile-button-box select option {
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+.support-style #support-Search-Result {
+  display: none;
+  padding-bottom: 3em;
+}
+.support-style #support-Search-Result .faq-nav {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+}
+.support-style #support-Search-Result .faq-nav a {
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 32px;
+}
+.support-style #support-Search-Result .faq-nav a::after {
+  content: "|";
+  margin: 0px 15px;
+}
+.support-style #support-Search-Result .faq-nav a:last-child::after {
+  content: "";
+  margin: none;
+}
+@media (min-width: 801px) {
+  .support-style #support-Search-Result .faq-nav a {
+    font-size: 21px;
+    line-height: 22px;
+  }
+}
+.support-style #support-Search-Result .faq-nav a.active {
+  font-weight: 700;
+}
+.support-style #support-Search-Result .faq-nav a:focus {
+  color: #333;
+}
+.support-style #support-Search-Result h1 {
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: #161C45;
+}
+.support-style #support-Search-Result a {
+  text-decoration: none;
+}
+.support-style #support-Search-Result #badSearch {
+  display: none;
+}
+.support-style #support-Search-Result #badSearch h4 {
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #282828;
+  text-align: center;
+}
+.support-style #support-Search-Result #badSearch p {
+  width: 80%;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #282828;
+  text-align: center;
+  margin: 0px auto;
+}
+.support-style #support-Search-Result button {
+  transition: 0.3s;
+  display: block;
+  color: #5286F7;
+  border-radius: 4px;
+  padding: 16px 40px;
+  margin: 2rem auto;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid #5286F7;
+}
+.support-style #support-Search-Result button:hover {
+  transition: 0.3s;
+  background: #5286F7;
+  color: #FFFFFF;
+  border: 1px solid #5286F7;
+}
+.support-style #support-Search-Result button:active {
+  transition: 0.3s;
+  background: #3E6CD0;
+  border: 1px solid #3E6CD0;
+}
+
+.support-style .more-info-section {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.support-style .more-info-section#more-info-section {
+  position: unset;
+  margin-left: unset;
+  left: unset;
+}
+.support-style .more-info-section .see-faq-btn {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 5%;
+}
+.support-style .more-info-section .see-faq-btn button {
+  background-color: unset;
+  color: #8B97B4 !important;
+  border: solid 1px #8B97B4 !important;
+}
+.support-style .more-info-section .see-faq-btn button:hover, .support-style .more-info-section .see-faq-btn button:focus {
+  color: white !important;
+  border: solid 1px #5286F7 !important;
+}
+.support-style .more-info-section .last {
+  border-bottom: 1px solid #DDDDDD;
+}
+.support-style .more-info-section .more-info-header h2 {
+  padding-bottom: 1em;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #282828;
+}
+@media only screen and (min-width: 650px) {
+  .support-style .more-info-section .more-info-header h2 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+@media only screen and (min-width: 1065px) {
+  .support-style .more-info-section .more-info-header h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+.support-style .more-info-section .more-info-block {
+  width: 90%;
+  margin: auto;
+  border-top: 1px solid #DDDDDD;
+  padding: 1em 0em;
+  font-size: 20px;
+  line-height: 24px;
+}
+.support-style .more-info-section .more-info-block:first-of-type {
+  border-top: none;
+}
+@media (min-width: 801px) {
+  .support-style .more-info-section .more-info-block {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1065px) {
+  .support-style .more-info-section .more-info-block {
+    width: 60%;
+  }
+}
+.support-style .more-info-section .more-info-block .more-info-button {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  text-decoration: none;
+  line-height: 24px;
+}
+.support-style .more-info-section .more-info-block .more-info-button h3 {
+  color: #282828;
+  margin: 0px;
+  width: 100%;
+  text-align: left;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+}
+@media (min-width: 551px) {
+  .support-style .more-info-section .more-info-block .more-info-button h3 {
+    font-size: 22px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+  }
+}
+@media only screen and (min-width: 1065px) {
+  .support-style .more-info-section .more-info-block .more-info-button h3 {
+    font-size: 24px;
+    line-height: 42px;
+  }
+}
+.support-style .more-info-section .more-info-block sup {
+  font-size: 60%;
+}
+.support-style .more-info-section .more-info-block span:after {
+  content: "+";
+  float: right;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: -0.02em;
+  color: #000000;
+}
+.support-style .more-info-section .more-info-block ul, .support-style .more-info-section .more-info-block ol {
+  margin-left: 3em;
+  margin-right: 3em;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.support-style .more-info-section .more-info-block p {
+  margin: 1em;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+.support-style .more-info-section .more-info-block.aboutEddie, .support-style .more-info-section .more-info-block.using-eddie, .support-style .more-info-section .more-info-block.shipping, .support-style .more-info-section .more-info-block.orders {
+  width: 90%;
+}
+.support-style .more-info-section .active span:after {
+  content: "-";
+}
+.support-style .more-info-section a {
+  color: #5286F7;
+  text-decoration: none;
+}
+.support-style .more-info-section a:hover {
+  text-decoration: underline;
+}
+.support-style .more-info-section .faq-cta {
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+.support-style .more-info-section .faq-cta button {
+  border: 1px solid #5286F7;
+  border-radius: 4px;
+  padding: 16px 48px;
+  color: #5286F7;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  transition: 0.3s;
+}
+.support-style .more-info-section .faq-cta button:hover {
+  transition: 0.3s;
+  background: #5286F7;
+  color: #fff;
+}
+.support-style .more-info-section .faq-cta button:active {
+  transition: 0.3;
+  background: #3E6CD0;
+  color: #fff;
+}
+.support-style .more-info-section .more-info-content {
+  display: none;
+}
+.support-style .more-info-section .more-info-content ol li {
+  margin-left: 1.15rem;
+}
+.support-style .contact-us .compact-contact {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 97px;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .compact-contact {
+    width: auto;
+    padding: 0 6rem;
+    display: flex;
+    margin-bottom: 124px;
+  }
+}
+.support-style .contact-us .contact-us-info {
+  width: 100%;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info #contact-container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info {
+    width: 50%;
+  }
+}
+.support-style .contact-us .contact-us-info h2 {
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 36px;
+  letter-spacing: -0.02em;
+  max-width: 543px;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info h2 {
+    font-size: 48px;
+    line-height: 48px;
+    margin-top: 0px;
+  }
+}
+.support-style .contact-us .contact-us-info p {
+  font-family: Slate Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 19px;
+  color: #686F77;
+  max-width: 543px;
+}
+.support-style .contact-us .contact-us-info p b {
+  color: #282828;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+.support-style .contact-us .contact-us-info p.cta-below {
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info p.cta-below {
+    margin-bottom: 1.5rem;
+  }
+}
+.support-style .contact-us .contact-us-info a {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 12px;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-info a {
+    font-size: 14px;
+    padding: 0.8rem 2rem;
+  }
+}
+.support-style .contact-us .contact-us-info a:hover:not(#no-hover) {
+  transition: 0.3s;
+  background: #FF3635;
+  color: #FFFFFF;
+}
+.support-style .contact-us .contact-us-info a:active {
+  transition: 0.3s;
+  background: #BC4A4A;
+}
+.support-style .contact-us .contact-us-form {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+.support-style .contact-us .contact-us-form form .custom-select-container:after {
+  color: #5286F7;
+  right: 10px;
+  top: 11px;
+}
+.support-style .contact-us .contact-us-form form .custom-select-container select.custom-select {
+  padding: 0.37rem 0.5rem;
+  height: 2rem;
+  color: #6D6D6D;
+  line-height: 100%;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-form {
+    width: 50%;
+    padding-left: 15px;
+  }
+}
+.support-style .contact-us .contact-us-form input:not(.button--primary), .support-style .contact-us .contact-us-form select, .support-style .contact-us .contact-us-form textarea {
+  background-color: rgba(139, 151, 180, 0.1);
+  border: none !important;
+}
+.support-style .contact-us .contact-us-form .form-flex input, .support-style .contact-us .contact-us-form .form-flex div {
+  width: 100% !important;
+  display: block !important;
+  margin-bottom: 28px;
+}
+@media (min-width: 801px) {
+  .support-style .contact-us .contact-us-form .form-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+  .support-style .contact-us .contact-us-form .form-flex input, .support-style .contact-us .contact-us-form .form-flex div {
+    width: 48% !important;
+  }
+}
+.support-style .support-block {
+  /* Style the navigation menu inside the left column */
+}
+.support-style .support-block .faq-Search-Header {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  padding-top: 2rem;
+  text-align: center;
+}
+.support-style .support-block .faq-Search-Header h2 {
+  width: 100%;
+  margin-bottom: 0.75em;
+  font: bold 30px/32px Slate Pro;
+}
+@media (min-width: 801px) {
+  .support-style .support-block .faq-Search-Header h2 {
+    font: bold 36px/32px Slate Pro;
+  }
+}
+.support-style .support-block .faq-Search-Header input[type=text], .support-style .support-block .faq-Search-Header input[type], .support-style .support-block .faq-Search-Header textarea, .support-style .support-block .faq-Search-Header select {
+  outline: none;
+}
+.support-style .support-block .faq-Search-Header #search-box {
+  width: 100%;
+  position: relative;
+  max-width: 844px;
+}
+.support-style .support-block .faq-Search-Header #search-box #faqSearch {
+  display: block;
+  width: 100%;
+  height: 48px;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 1em;
+  background-color: rgba(139, 151, 180, 0.1);
+  max-width: 844px;
+  margin: auto;
+}
+.support-style .support-block .faq-Search-Header #search-box #faqsearch-button {
+  position: absolute;
+  margin: auto;
+  justify-content: right;
+  text-align: end;
+  top: 20%;
+  right: 0px;
+}
+.support-style .support-block #supportList .faqTitle h2 {
+  color: #3185FC;
+  font: bold 20px/24px Slate Pro;
+  margin-top: 1rem;
+  padding: 1rem 1rem 0rem;
+  border-top: #ffffff solid 3px;
+}
+.support-style .support-block #supportList .faQuestion-plus h2 {
+  font: 500 18px/22px Slate Pro;
+  color: #161C45;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.support-style .support-block #supportList .faQuestion-plus ::before {
+  content: "+"; /* Insert content that looks like bullets */
+  margin-right: 8px;
+  color: #161C45;
+}
+.support-style .support-block #supportList .faQuestion-minus h2 {
+  font: 500 18px/22px Slate Pro;
+  color: #161C45;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.support-style .support-block #supportList .faQuestion-minus ::before {
+  content: "-"; /* Insert content that looks like bullets */
+  margin-right: 8px;
+  color: #161C45;
+}
+.support-style .support-block #supportList .mobile-answers {
+  display: none;
+  font: normal 16px/19px Slate Pro;
+  color: #1F2536;
+}
+.support-style .support-block #supportList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 801px) {
+  .support-style .support-block #supportList {
+    margin-bottom: 2.5rem;
+  }
+}
+.support-style #international-inquiry, .support-style #contactUs, .support-style form {
+  display: flex;
+  flex-flow: column;
+  max-width: 748px;
+  margin: auto;
+}
+.support-style #international-inquiry label, .support-style #contactUs label, .support-style form label {
+  color: #282828;
+}
+.support-style #international-inquiry input, .support-style #contactUs input, .support-style form input {
+  color: #6D6D6D;
+  height: 2rem;
+  padding: 0.37rem 0.5rem;
+  width: auto;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+.support-style #international-inquiry input[type=submit], .support-style #contactUs input[type=submit], .support-style form input[type=submit] {
+  color: #FFF;
+  font-family: "Slate Pro", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.3s;
+  max-width: 110px;
+}
+.support-style #international-inquiry input[type=submit]:hover, .support-style #contactUs input[type=submit]:hover, .support-style form input[type=submit]:hover {
+  transition: 0.3s;
+  background: #FF3635;
+  color: #FFFFFF;
+}
+.support-style #international-inquiry input[type=submit]:active, .support-style #contactUs input[type=submit]:active, .support-style form input[type=submit]:active {
+  transition: 0.3s;
+  background: #BC4A4A;
+}
+    /*#endregion  FAQ/Support  */
 
     /*#region   */
     /*#endregion   */

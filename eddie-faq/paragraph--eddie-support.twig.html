@@ -1,0 +1,682 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+{% block paragraph %}
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+    <main class="page support-style">
+      <div class="page-content--full">
+          <div class="support-block full-screen-width">
+              <div class="faq-Search-Header">
+                  <div class='mid-width-layout'>
+                      <h2>FAQ and Support</h2>
+                      <div id="search-box">
+                          <input type="text" id="faqSearch" placeholder="Find a topic" title="Type in a category">
+                          <button id="faqsearch-button"><img src="{{ cdn '/assets/img/search.svg'}}"></button>
+                      </div>
+                  </div>
+              </div>
+  
+              <div id="support-Search-Result">
+                  <div class="faq-nav">
+                      <a href="#" class="faq-nav-btn active" id="faq-all-eddie-search">All</a>
+                      <a href="#" class="faq-nav-btn" id="faq-about-eddie-search">About Eddie<span class="reg-resize">&reg;</span></a>
+                      <a href="#" class="faq-nav-btn" id="faq-using-eddie-search">Using Eddie<span class="reg-resize">&reg;</span></a>
+                      <a href="#" class="faq-nav-btn" id="faq-shipping-eddie-search">Shipping & Returns</a>
+                      <a href="#" class="faq-nav-btn" id="faq-orders-eddie-search">Orders & Account</a>                    
+                  </div>
+                  <div id="search-results">
+                      <h1>Search Results</h1>
+                      <div id="badSearch">
+                          <h4>Sorry about that!</h4>
+                          <p>Try again with fewer or more general search terms.</p>
+                      </div>
+                      <div id="split-container">
+                          <div id="more-info-section" class="more-info-section split-half">
+                              <!-- <a href="/support/"><button class="button--secondary">See all FAQ's</button></a> -->
+                          </div>
+                          <div id="more-info-img" class="split-half faq-page">
+                              <img src="{{cdn '/assets/img/holding-eddie.jpg'}}" />
+                          </div>
+                      </div>
+                      
+                  </div>
+              </div>
+  
+              <div class="button-box mid-width-layout">
+  
+                      <div class="faq-nav">
+                          <a href="#" class="faq-nav-btn active" id="faq-all-eddie">All</a>
+                          <a href="#" class="faq-nav-btn" id="faq-about-eddie">About Eddie<span class="reg-resize">&reg;</span></a>
+                          <a href="#" class="faq-nav-btn" id="faq-using-eddie">Using Eddie<span class="reg-resize">&reg;</span></a>
+                          <a href="#" class="faq-nav-btn" id="faq-shipping-eddie">Shipping & Returns</a>
+                          <a href="#" class="faq-nav-btn" id="faq-orders-eddie">Orders & Account</a>
+                      </div>
+              </div>
+  
+              <div id="supportList">
+                  <div class="container">
+                      <div id="allFAQ" class="more-info-section">
+                          
+                          <div id="about-eddie-faq"></div>
+                          <div class="about-eddie-faq-info" id="split-container">
+                              <div id="more-info-section" class="split-half">
+                                  <a class="more-info-header faq-header"><h3>About Eddie</h3><span class="icon-indicator"></span></a>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>How does Giddy treat ED?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>With Eddie. Our wearable, utility-patented, FDA Registered Class II medical device
+                                              designed specifically to help men with erectile dysfunction (ED) maintain an
+                                              erection. Eddie’s the most innovative wearable device designed to treat ED in
+                                              history. Now it’s available over-the-counter to men and their partners looking for a
+                                              treatment for ED, or for an increase in their performance.</p>
+                                          <p>We also produced the ED Guide. A dynamic, in-depth video series that helps men and
+                                              their partners with the mental, physical, lifestyle, and relationship aspects of ED.
+                                              The ED Guide is led by experts in urology, psychology, functional medicine, fitness,
+                                              nutrition, sexology, and others, so you get professional help to achieve a real
+                                              result.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>Is Eddie registered with the FDA?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Yes. Eddie is an FDA Registered Class II medical device for maintaining penile
+                                              rigidity in men with erectile dysfunction.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>What is Eddie made of?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie is a polycarbonate/ABS alloy coated in medical-grade, multilayer proprietary
+                                              thermoplastic elastomer (TPE) that is environmentally-friendly and resistant to
+                                              chemicals and abrasions. Eddie is durable, soft to the touch, and free of PVC,
+                                              latex, and phthalates.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>How is Eddie different from a cock ring?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p><b>Eddie is a utility patented, FDA Registered Class II medical device.</b> It’s the
+                                              most innovative wearable product designed to treat ED in history. Cock rings aren’t.
+                                          </p>
+                                          <p><b>Eddie comes with access to a dynamic video series</b> about ED and sex, for free,
+                                              led by experts in sexual health and wellness. Cock rings don’t.</p>
+                                          <p><b>Eddie is shaped like an oval</b>, or “omega”, so that it actually fits the penis
+                                              for a comfortable experience. Cock rings are shaped like a circle. We don’t know
+                                              why, the penis isn’t a circle. This means cock rings clench the penis all around,
+                                              causing pain and discomfort.</p>
+                                          <p><b>Eddie comes with two different tension bands</b>, the blue "Comfort" band and
+                                              the red "Sport" band, so you can adjust the fit and feel from Eddie. Cock rings don’t.</p>
+                                          <p><b>Eddie constricts the veins, but not the arteries or urethra.</b> This means better
+                                              blood flow, and more open, natural-feeling ejaculation. Cock rings constrict
+                                              everything, leading to pain and sometimes backwards ejaculation.</p>
+                                          <p><b>Eddie is made from medical-grade materials.</b> An advanced multilayer
+                                              polycarbonate/ABS alloy and coated in proprietary thermoplastic elastomer (TPE).
+                                              Cock rings aren’t.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>How long will Eddie last?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie is made from durable, medical-grade materials that will last an extended period
+                                              of time if you follow the usage, cleaning, and storage instructions. We recommend
+                                              replacing your Eddie every 3-4 months to keep it as effective and hygienic as
+                                              possible.</p>
+                                          <p>You might also replace your Eddie if:</p>
+                                          <ul>
+                                              <li>You have changed sexual partners</li>
+                                              <li>You or your partner is suffering from a viral bacteria, or contagious medical
+                                                  condition</li>
+                                              <li>Your Eddie has lost tension or cleanliness from frequent use</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>Are there any side effects or risks to using Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie doesn’t cause any of the side effects of ED pills. When used properly, Eddie
+                                              should not result in any harmful side effects. Side effects resulting from misuse of
+                                              Eddie should be minor and infrequent. It’s important to closely follow all warnings,
+                                              precautions, recommendations, and instructions for use included with your Eddie. As
+                                              with any medical device, we recommend consulting your doctor before use.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>Do you have any other sizes?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Currently, Eddie is available in four sizes; A, B, C, and D. These four sizes are
+                                              capable of accommodating about 99% of American males. For now, Giddy accommodates
+                                              sizes in this range only.</p>
+                                          <p>We’re always looking to improve how we help men and their partners affected by ED. We
+                                              plan to expand our product line to include an even wider population of body types,
+                                              shapes, and sizes.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block aboutEddie">
+                                      <a class="more-info-button">
+                                          <h3>Is there any clinical trial data for Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>
+                                              Yes! A 2021 clinical trial concluded with overwhelmingly positive results.
+                                          </p>
+                                          <p>
+                                              You can see the data <a href="/clinical-trials/">here</a>.
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="more-info-img" class="split-half faq-page">
+                                  <img src="{{cdn '/assets/img/holding-eddie.jpg'}}" />
+                              </div>
+                          </div>
+                          
+                          <div id="using-eddie-faq"></div>
+                          <div class="using-eddie-faq-info" id="split-container">
+                              <div id="more-info-section" class="split-half">
+                                  <a class="more-info-header faq-header"><h3>Using Eddie</h3><span class="icon-indicator"></span></a>
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>How do you wear Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie can be applied when your penis is flaccid (soft) or erect (hard).</p>
+                                          <p>Place Eddie at the base of your penis, in front of your testicles, with the opening
+                                              facing down.</p>
+                                          <p>Wrap one of the tension bands around the ends of the device. Use the blue band for
+                                              less constriction, or use the red band for maximum constriction.</p>
+                                          <p>For those with limited hand strength, an alternative method is to wrap the tension
+                                              band around Eddie before placing it on your penis, then gently pull Eddie apart to
+                                              create a wider opening, while sliding it down onto the base of your penis. You can
+                                              also try covering the device in lubricant to assist.</p>
+                                          <p>Talk to your doctor before using Eddie. We recommend trying Eddie alone, first,
+                                              before trying it with a partner, to become familiar with how it feels and works.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>When do I put Eddie on?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie can be worn when your penis is flaccid (soft) or erect (hard). It can be used
+                                              before, during, or after foreplay or intercourse. It depends on your preference, and
+                                              what provides the best result for you and your partner. Eddie by itself was not
+                                              designed to help you achieve an erection, but the ED Guide video series has
+                                              information and exercise focusing on sex, intimacy, arousal, achieving erections,
+                                              and more.</p>
+                                          <p>We recommend trying Eddie alone, first, before trying it with a partner, to become
+                                              familiar with how it feels and works.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>I have a medical condition. Will Eddie still work for me?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie works for many men with medical conditions that cause ED. However, without an
+                                              in-person evaluation by a doctor, we’re not able to diagnose or advise our customers
+                                              about any medical conditions they have, and how it may or may not interfere with
+                                              using Eddie.</p>
+                                          <p>Men with various medical conditions including Diabetes, Low testosterone, Heart
+                                              Disease, Obesity, Prostate Cancer, Depression, Anxiety, PTSD and others, have
+                                              reported successful results with Eddie. We recommend speaking with a doctor about
+                                              your questions and concerns. We’re happy to provide whatever information we can to
+                                              assist.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>Can I use Eddie with pumps and pills?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>For men with mild to moderate ED, Eddie can be used as a standalone option. For men
+                                              with moderate to severe ED, Eddie can be used simultaneously with ED medications, a
+                                              vacuum pump, or other treatments as indicated by a medical provider. Always talk to
+                                              your doctor before introducing a new ED treatment.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>Can I use lubricants with Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Yes. Eddie can be used with any water-based, oil-based, or silicone-based lubricants.
+                                          </p>
+                                      </div>
+                                  </div>
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>How long can I wear Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>We recommend wearing Eddie for no longer than 30 minutes at a time, and waiting 60
+                                              minutes in between uses. Refer to the Instructions for Use and safety warnings
+                                              included with your Eddie for more information.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block using-eddie">
+                                      <a class="more-info-button">
+                                          <h3>How do I clean my Eddie?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Your Eddie and tension bands can easily be cleaned by rinsing them with warm water
+                                              and lathering them with a non-abrasive, antibacterial soap. Avoid using bleach,
+                                              chlorine, or any chemicals that could irritate the skin or cause an allergic
+                                              reaction. After rinsing and lathering, rinse again then dry using a paper towel,
+                                              towel, or air-dry.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="more-info-img" class="split-half faq-page">
+                                  <img src="{{cdn '/assets/img/referral-bg-mobile.jpg'}}" />
+                              </div>
+                          </div>
+  
+                          <div id="shipping-eddie-faq"></div>
+                          <div class="shipping-eddie-faq-info" id="split-container">
+                              <div id="more-info-section" class="split-half">
+                                  <a class="more-info-header faq-header"><h3>Shipping & Returns</h3><span class="icon-indicator"></span></a>
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>What if I want a different size?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Giddy provides free resizes with all orders, which allows you to resize your
+                                              Eddie for free, as many times as you need, as long as it’s a different size as your
+                                              other orders!</p>
+                                          <p>For resizing:
+                                              <ol>
+                                                  <li>Log into your account <a href="/account.php">here</a>.</li>
+                                                  <li>Select “Eddie Resize” from the menu on the left.</li>
+                                                  <li>Follow the instructions to complete your free resize order.</li>
+                                              </ol>
+                                          </p>                  
+                                              <p>OR</p>                                    
+                                              <p>Reach out to us at <a href="mailto:customercare@eddiebygiddy.com">customercare@eddiebygiddy.com</a>. For the fastest service, use the same email address you used to place your order.</p>
+                                              <p>If you request a refund after resizing your Eddie, you may be asked to submit a photo of all your Eddies cut in half, before your refund is processed. (Standard household scissors should work.)</p>
+                                          </p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>What’s the refund policy?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie® is a medical device used during sexual activity, so we are unable to accept any devices that have been used or delivered. We are happy to offer a refund for the full cost of your order, minus $25 per Eddie (as long as it's in the first 60 days of receiving your order.) This covers shipping, handling, fulfillment, and payment processing. Replacement tension bands and carrying cases are not eligible for refunds.
+                                          </p>
+                                          <p>
+                                              If you are requesting a refund, we will ask that you submit a photo of all your Eddies cut in half before your refund is processed. (Standard household scissors should work.)
+                                          </p>
+                                          <p>For help with a refund, please reach out to us at <a
+                                              href="mailto: customercare@eddiebygiddy.com">customercare@eddiebygiddy.com</a>. For the fastest service, use
+                                          the same email address you used to place your order.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>How fast is shipping?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Your order will be fulfilled next business day and shipped for free via USPS First Class (estimated 5 to 7 business days). Express shipping via USPS Priority is also available for an additional fee.<br><br>*Please note that some delays may occur due to COVID or for purchases made around US Federal holidays.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>Is shipping discreet?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Yes. Your Eddie will arrive in a discreet, unbranded package to protect your privacy.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>Do you deliver to PO boxes?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Yes! We have upgraded our delivery capabilities and can now deliver to PO box
+                                              addresses.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>Do you ship internationally?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p style="margin-bottom: .5rem;">We do not offer international shipping at this time,
+                                              but we are currently making arrangements to expand overseas. If you would like us to
+                                              notify you when our products are available in your country, please provide us with
+                                              your information below:</p>
+                                          <form id="international-inquiry"
+                                          onsubmit="giddyUtils.catchForm('international-inquiry');">
+                                              <input type=hidden name="oid" value="00D4W000003adbL">
+                                              <input type=hidden name="retURL" id="int-retUrl" value="https://eddiebygiddy.com/">
+                                              <input type=hidden name="lead_source" value="International Inquiry">
+                                              <label for="int-email">Email</label><input id="int-email" maxlength="80" name="email"
+                                                  size="20" type="text" /><br>
+                                              <label for="first_name">First Name</label><input id="first_name" maxlength="40"
+                                                  name="first_name" size="20" type="text" /><br>
+                                              <label for="last_name">Last Name</label><input id="last_name" maxlength="80"
+                                                  name="last_name" size="20" type="text" /><br>
+                                              <input type="submit" class="button--primary" name="submit">
+                                          </form>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>Do you accept returns?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie is a medical device, and by law cannot be returned, re-packaged, or recycled. However, a refund can be provided within the first 60 days of receiving your order.
+                                          </p>
+                                          <p>To receive a refund, please reach out to our customer care team. A refund is provided for the full cost of your order, minus $25.00 per Eddie. This amount is required to cover the costs of shipping, handling, fulfillment, payment processing, and other services required to complete your order. Express shipping costs, replacement tension bands, and carrying cases are not eligible for refunds.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block shipping">
+                                      <a class="more-info-button">
+                                          <h3>I can’t find my package.</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>We’re sorry if you’re experiencing issues with your delivery. If you have received
+                                              confirmation from UPS or USPS that your package has been delivered, but you do not
+                                              see your package at the address you provided, you will need to contact them
+                                              directly. Here’s their information:</p>
+                                          <p><a href="https://www.ups.com/us/en/help-support-center.page">UPS Support</a>
+                                              1-(800)-742-5877</p>
+                                          <p><a href="https://faq.usps.com/s/">USPS Support</a> 1-(800)-275-8777</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="more-info-img" class="split-half faq-page">
+                                  <img src="{{cdn '/assets/img/Eddie-4-Product-Page/Image-Carousel/4th-image.jpg'}}" />
+                              </div>
+                          </div>
+  
+                          <div id="orders-eddie-faq"></div>
+                          <div class="orders-eddie-faq-info" id="split-container">
+                              <div id="more-info-section" class="split-half">
+                                  <a class="more-info-header faq-header"><h3>Orders & Account</h3><span class="icon-indicator"></span></a>
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>What is the Stay-Giddy Plan?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Reports show that less than 15% of people actually clean their sex health devices as recommended.</p>
+                                          <p>The Stay-Giddy Plan is our subscription option for Eddie. Sign up and automatically receive fresh Eddies and tension bands every 4 months. Your payment information on file will be charged the appropriate amount, and your Eddie and bands will be shipped for free in 3-5 business days.</p>
+                                          <p>Benefits of the Stay-Giddy Plan:</p>
+                                          <ul>
+                                              <li>Saves you around 25% compared to a one-time purchase.</li>
+                                              <li>Keeps your Eddie and bands clean, safe, and pleasing to yourself and your
+                                                  partner.</li>
+                                              <li>Over time, with use, Eddie and the bands will stretch and lose tension.
+                                                  Replacing them regularly will maintain an optimal fit, feel, and results.</li>
+                                              <li>You can have extra Eddies and tension bands ready to go, and conveniently stored
+                                                  in various locations.</li>
+                                              <li>Replacing your Eddie and bands is recommended if you change sexual partners or
+                                                  you or your partner contract an STI.</li>
+                                          </ul>
+                                          <p>To change or manage your Stay-Giddy plan, please login to your account.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>What is the "PayPal PayLater" option at checkout?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>We do not currently offer a financial assistant program. However, during checkout you can use the PayPal PayLater option that allows you to pay later using one of these two options:</p>
+                                          <ul>
+                                              <li><u>PayPal Credit</u>: you pay as you would a normal credit card, interest free if paid in full in the appropriate time!</li>
+                                              <li><u>PayPal Pay-in-4</u>: breaks the total price into 4 smaller, interest-free payments due over the course of 8 weeks.</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>Do you have a financial assistance program?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>We do not currently offer a financial assistant program. However, during checkout you can use the PayPal PayLater option that allows you to pay later using one of these two options:</p>
+                                          <ul>
+                                              <li><u>PayPal Credit</u>: you pay as you would a normal credit card, interest free if paid in full in the appropriate time!</li>
+                                              <li><u>PayPal Pay-in-4</u>: breaks the total price into 4 smaller, interest-free payments due over the course of 8 weeks.</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>Is Eddie covered by my insurance?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Eddie is not covered by insurance (yet). However, during checkout you can use the PayPal PayLater option that allows you to pay later using one of these two options:</p>
+                                          <ul>
+                                              <li><u>PayPal Credit</u>: you pay as you would a normal credit card, interest free if paid in full in the appropriate time!</li>
+                                              <li><u>PayPal Pay-in-4</u>: breaks the total price into 4 smaller, interest-free payments due over the course of 8 weeks.</li>
+                                          </ul>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>What does a purchase include?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Each Eddie order includes:</p>
+                                          <ul>
+                                              <li>1 or 2 Eddies (depending on which pack you order)</li>
+                                              <li>3 red “Sport” Tension Bands per Eddie</li>
+                                              <li>3 blue “Comfort” Tension Bands per Eddie</li>
+                                              <li>Personalized ED Guide video curriculum</li>
+                                          </ul>
+                                          <p>Visit our Product page for more information.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>How do I reset my account password?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Sorry if you’re having issues with your account. You can reset your password <a
+                                                  href="/login.php?action=reset_password">here</a>. You’ll then receive an email
+                                              with instructions to regain access. Please use the email address you used to place
+                                              your order.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>Can I add an extra Eddie to my order?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>When purchasing an Eddie 1-Pack or 2-Pack, during checkout you may have the option to
+                                              add additional Eddies at a lower cost. It’s a great way to add an extra “backup”
+                                              Eddie to your order without paying full price. Any extra Eddies you add will also
+                                              come with 6 tension bands (3 of each strength). Please note: If you add an Eddie to
+                                              a 1-pack, you’ll receive a 2-pack. If you add an Eddie to a 2-pack, you’ll receive a
+                                              2-pack plus a separate 1-pack.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>Can I speak to someone on the phone?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>Giddy customer support is currently provided exclusively via email. If you’d like to
+                                              leave a detailed voice message at (737) 530-8542, please include your email address
+                                              and someone from our customer care team will contact you in 3 to 5 business days. If
+                                              you’re an existing customer, please provide the email address you used when placing
+                                              your order, so we can better assist you.</p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>What happens if I cancel my "Stay-Giddy" subscription plan?</h3>
+                                          <span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>
+                                              We don't charge any cancellation fees. Please login to your account to manage your plan. 
+                                              Update your address, account payment info, or check on the status of new deliveries by logging into your <a href="/account-profile/">account profile</a>.
+                                          </p>
+                                      </div>
+                                  </div>
+  
+                                  <div class="more-info-block orders">
+                                      <a class="more-info-button">
+                                          <h3>I didn't purchase Eddie<sup>&reg;</sup> from EddieByGiddy.com. Can I still get a resize/refund?</h3><span></span>
+                                      </a>
+                                      <div class="more-info-content">
+                                          <p>If you purchased Eddie<sup>&reg;</sup> from somewhere other than EddieByGiddy.com, special conditions may apply regarding resizes and refunds. Please email us at <a href="mailto: customercare@eddiebygiddy.com">customercare@eddiebygiddy.com</a> to hear your options.</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="more-info-img" class="split-half faq-page">
+                                  <img src="{{cdn '/assets/img/eddie-in-drawer.jpg'}}" />
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div id="contact-us-form" class="contact-us">
+                  <div class="compact-contact">
+                      <div class="contact-us-info">
+                          <div id="contact-container">
+                              <h2>Contact</h2>
+                              <p>For assistance, please fill out this contact form and our Customer Care team will reply as soon as possible.</p>
+                              <p>
+                                  <b>Office Hours</b><br>M-S, 8a-8p CST
+                                  <br><br>
+                                  Closed for US Federal holidays including: New Year's Day, Memorial Day, Independence Day, Labor Day, Veteran's Day, Thanksgiving, and Christmas Day
+                              </p>
+                              <p><b>Address</b><br>1005 E St Elmo Rd,<br>Austin, TX 78745</p>
+                              <p><b>Customer Service</b><br>Call <a id="no-hover" style="text-decoration: none;" href="tel:5122703980">(512) 270-3980</a></p>
+  
+                              <p class="cta-below"><b>Tired of computers?</b><br>Ten-minute consultations are available through the link below.</p>
+                              <a class="button--secondary" href="https://calendly.com/eddie-by-giddy" target="_blank">Schedule a Call</a>
+                          </div>
+                      </div>
+                      <div class="contact-us-form">
+                          <form id="contactForm"
+                          onsubmit="giddyUtils.catchForm('contactForm');">
+                              <input type=hidden name='captcha_settings'
+                                  value='{"keyname":"Recaptcha","fallback":"true","orgId":"00D4W000003adbL","ts":""}'>
+                              <input type=hidden name="orgid" value="00D4W000003adbL">
+                              <input type=hidden name="retURL" id="retUrl" value="https://eddiebygiddy.com/support/">
+  
+                              <div class="form-flex">
+                                  <input id="contact-name" placeholder="Full name" maxlength="80" name="name" size="20" type="text" />
+                                  <input id="contact-email" placeholder="Email address" maxlength="80" name="email" size="20" type="text" />
+                              </div>
+  
+                              <div class="form-flex">
+                                  <div class="custom-select-container">
+                                      <select id="contact-type" name="type" class="custom-select" aria-placeholder="Select...">
+                                          <option value="">Reason for contact</option>
+                                          <option value="Sizing Issue">Sizing Issue</option>
+                                          <option value="Order Inquiry">Order Inquiry</option>
+                                          <option value="Refunds">Refunds</option>
+                                          <option value="Log In / Website Issues">Log In / Website Issues</option>
+                                          <option value="Other">Other</option>
+                                      </select>
+                                  </div>
+                                  <input id="contact-subject" placeholder="Subject" maxlength="80" name="subject" size="20" type="text" />
+                              </div>
+                              
+                              <textarea id="contact-description" name="description" placeholder="Description of issue" rows="3"></textarea><br>
+                              <div class="g-recaptcha" data-sitekey="6Ld3KP0ZAAAAAExMjDf9Fv7xWV0rThLwDInlVBqs"></div><br>
+                              <input class="button--primary" type="submit" name="submit" value="Submit">
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </main>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}

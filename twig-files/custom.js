@@ -1,3 +1,357 @@
+      //--------------------------------------------------------------------------------------------------------
+    //------------------------------------ support page logic ------------------------------------------------
+    //--------------------------------------------------------------------------------------------------------
+   //More Info accordions
+   $(".more-info-button").on('click', function (e) {
+    console.log("Click Button");
+    e.preventDefault();
+    if ($(this).is("input, label")) {
+    } else {
+        var buttonBox = $(this).parent();
+        if ($(buttonBox).hasClass("active")) {
+            $(buttonBox).removeClass("active");
+            $(".more-info-content", buttonBox).slideUp();
+        } else {
+            $(".more-info-block").removeClass("active");
+            $(".more-info-content").slideUp();
+            $(buttonBox).addClass("active");
+            $(".more-info-content", buttonBox).slideDown();
+        }
+    }
+});
+   
+    if (window.location.pathname == "/support/") {
+        console.log("Support Page");
+        function supportPageLoad() {
+            var foundFAQ = [];
+            var stopwords = [
+                "i",
+                "me",
+                "my",
+                "myself",
+                "we",
+                "our",
+                "ours",
+                "ourselves",
+                "eddie",
+                "dose",
+                "you",
+                "your",
+                "yours",
+                "yourself",
+                "yourselves",
+                "he",
+                "him",
+                "his",
+                "himself",
+                "she",
+                "her",
+                "hers",
+                "herself",
+                "it",
+                "its",
+                "itself",
+                "they",
+                "them",
+                "their",
+                "theirs",
+                "themselves",
+                "what",
+                "which",
+                "who",
+                "whom",
+                "this",
+                "that",
+                "these",
+                "those",
+                "am",
+                "is",
+                "are",
+                "was",
+                "were",
+                "be",
+                "been",
+                "being",
+                "have",
+                "has",
+                "had",
+                "having",
+                "do",
+                "does",
+                "did",
+                "doing",
+                "a",
+                "an",
+                "the",
+                "and",
+                "but",
+                "if",
+                "or",
+                "because",
+                "as",
+                "until",
+                "while",
+                "of",
+                "at",
+                "by",
+                "for",
+                "with",
+                "about",
+                "against",
+                "between",
+                "into",
+                "through",
+                "during",
+                "before",
+                "after",
+                "above",
+                "below",
+                "to",
+                "from",
+                "up",
+                "down",
+                "in",
+                "out",
+                "on",
+                "off",
+                "over",
+                "under",
+                "again",
+                "further",
+                "then",
+                "once",
+                "here",
+                "there",
+                "when",
+                "where",
+                "why",
+                "how",
+                "all",
+                "any",
+                "both",
+                "each",
+                "few",
+                "more",
+                "most",
+                "other",
+                "some",
+                "such",
+                "no",
+                "nor",
+                "not",
+                "only",
+                "own",
+                "same",
+                "so",
+                "than",
+                "too",
+                "very",
+                "s",
+                "t",
+                "can",
+                "will",
+                "just",
+                "don",
+                "should",
+                "now",
+                "cancel"
+            ];
+            var urlParams = new URLSearchParams(window.location.search);
+            var currentQueryString = urlParams.get("faq");
+            if (currentQueryString != null) {
+                $(".button-box").hide();
+                $(".mobile-button-box").hide();
+                var faqClassLookup = $(".more-info-block");
+                $("#support-Search-Result").show();
+                var currentFAQ = currentQueryString;
+                currentFAQ = decodeURIComponent(currentFAQ);
+                $("#faqSearch").val(currentFAQ);
+                var res = [];
+                var keyWords = currentFAQ.split(" ");
+                for (i = 0; i < keyWords.length; i++) {
+                    var word_clean = keyWords[i].split(".").join("");
+                    if (stopwords.includes(word_clean)) {
+                        res.push(word_clean);
+                    }
+                }
+                for (i = 0; i < res.length; i++) {
+                    for (var index = 0; index < supportFAQ.length; ++index) {
+                        var faq = supportFAQ[index].text;
+                        var obj = JSON.stringify(faq);
+                        if (obj.indexOf(res[i]) > 0) {
+                            foundFAQ.push(index);
+                        } else {
+                        }
+                    }
+                }
+                if (foundFAQ.length <= 0) {
+                    $("#badSearch").show();
+                } else {
+                    var cleanfoundFAQ = [];
+                    $.each(foundFAQ, function (i, el) {
+                        if ($.inArray(el, cleanfoundFAQ) === -1) cleanfoundFAQ.push(el);
+                    });
+                    cleanfoundFAQ.sort(function (a, b) {
+                        return a - b;
+                    });
+                    var faqPlacement = $(".more-info-section");
+                    for (i = 0; i < cleanfoundFAQ.length; i++) {
+                        var buildFAQ = faqClassLookup[cleanfoundFAQ[i]];
+                        $(faqPlacement[0]).append(buildFAQ);
+                        $(buildFAQ).show();
+                    }
+                    var seeAllFAQBtn = '<a class="see-faq-btn" href="/support/"><button class="button--secondary">See all FAQ\'s</button></a>';
+                    $(faqPlacement[0]).append(seeAllFAQBtn);
+                }
+            } else {
+                $("#allFAQ").show();
+            }
+        }
+
+        supportPageLoad();
+    }
+    $("#faqSearch").bind("enterKey", function (e) {
+        var searchString = $("#faqSearch").val();
+        var lcSearchString = searchString.toLowerCase();
+        if (searchString != "") {
+            window.location.replace("/support/?faq=" + lcSearchString);
+        } else {
+        }
+    });
+
+    $("#faqsearch-button").click(function () {
+        var searchString = $("#faqSearch").val();
+        var lcSearchString = searchString.toLowerCase();
+        if (searchString != "") {
+            window.location.replace("/support/?faq=" + lcSearchString);
+        } else {
+        }
+    });
+
+    $("#faqSearch").keyup(function (e) {
+        if (e.keyCode === 13) {
+            $(this).trigger("enterKey");
+        }
+    });
+
+    $("#faq-all-eddie, #faq-all-eddie-search").on('click', function () {
+        //Hide Search result view
+        $("#support-Search-Result").hide();
+        $("#allFAQ").show();
+        $(".button-box").show();
+
+        //Set active state to correct element
+        $(".faq-nav-btn").removeClass("active");
+        $('#faq-all-eddie').addClass("active");
+
+        //Hide sections that aren't active
+        if (window.location.pathname == "/support/") {
+            $(".about-eddie-faq-info").show();
+            $(".using-eddie-faq-info").show();
+            $(".shipping-eddie-faq-info").show();
+            $(".orders-eddie-faq-info").show();
+        }
+    });
+
+    $("#faq-about-eddie, #faq-about-eddie-search").on('click', function () {
+        //Set active state to correct element
+        $(".faq-nav-btn").removeClass("active");
+        $('#faq-about-eddie').addClass("active");
+
+        //Hide sections that aren't active
+        if (window.location.pathname == "/support/") {
+            $(".about-eddie-faq-info").show();
+            $(".using-eddie-faq-info").hide();
+            $(".shipping-eddie-faq-info").hide();
+            $(".orders-eddie-faq-info").hide();
+        }
+    });
+
+    $("#faq-using-eddie, #faq-using-eddie-search").on('click', function () {
+        //Hide Search result view
+        $("#allFAQ").show();
+        $(".button-box").show();
+        $("#support-Search-Result").hide();
+        $(".support-Search-Result .faq-nav").hide();
+
+        //Set active state to correct element
+        $(".faq-nav-btn").removeClass("active");
+        $('#faq-using-eddie').addClass("active");
+
+        //Hide sections that aren't active
+        if (window.location.href.indexOf("/support/") > -1) {
+            $(".about-eddie-faq-info").hide();
+            $(".using-eddie-faq-info").show();
+            $(".shipping-eddie-faq-info").hide();
+            $(".orders-eddie-faq-info").hide();
+        }
+    });
+
+    $("#faq-orders-eddie, #faq-orders-eddie-search").on('click', function () {
+        //Hide Search result view
+        $("#support-Search-Result").hide();
+        $("#allFAQ").show();
+        $(".button-box").show();
+
+        //Set active state to correct element
+        $(".faq-nav-btn").removeClass("active");
+        $('#faq-orders-eddie').addClass("active");
+
+        //Hide sections that aren't active
+        if (window.location.pathname == "/support/") {
+            $(".about-eddie-faq-info").hide();
+            $(".using-eddie-faq-info").hide();
+            $(".shipping-eddie-faq-info").hide();
+            $(".orders-eddie-faq-info").show();
+        }
+    });
+
+    $("#faq-shipping-eddie, #faq-shipping-eddie-search").on('click', function () {
+        //Hide Search result view
+        $("#support-Search-Result").hide();
+        $("#allFAQ").show();
+        $(".button-box").show();
+
+        //Set active state to correct element
+        $(".faq-nav-btn").removeClass("active");
+        $('#faq-shipping-eddie').addClass("active");
+
+        //Hide sections that aren't active
+        if (window.location.pathname == "/support/") {
+            $(".about-eddie-faq-info").hide();
+            $(".using-eddie-faq-info").hide();
+            $(".shipping-eddie-faq-info").show();
+            $(".orders-eddie-faq-info").hide();
+        }
+    });
+
+    $("#mobile-faq-selection").change(function () {
+        if ($(this).val() == "about") {
+            $(".aboutEddie").show();
+            $(".using-eddie, shipping, orders").hide();
+            $("#about-Eddie").addClass("active");
+            $("#shipping-Eddie, #using-Eddie, #order-Eddie").removeClass("active");
+        }
+        if ($(this).val() == "using") {
+            $(".using-eddie").show();
+            $(".shipping, .aboutEddie, .orders").hide();
+            $("#using-Eddie").addClass("active");
+            $("#about-Eddie, #shipping-Eddie, #order-Eddie").removeClass("active");
+        }
+        if ($(this).val() == "shipping") {
+            $(".shipping").show();
+            $(".orders, .aboutEddie, .using-eddie").hide();
+            $("#shipping-Eddie").addClass("active");
+            $("#about-Eddie, #using-Eddie, #order-Eddie").removeClass("active");
+        }
+        if ($(this).val() == "account") {
+            $(".orders").show();
+            $(".using-eddie, .shipping, .aboutEddie").hide();
+            $("#order-Eddie").addClass("active");
+            $("#about-Eddie, #using-Eddie, #shipping-Eddie").removeClass("active");
+        }
+    });
+   
    //  Grab the queryString from the URL
    let arr = [];
    let queryString = window.location.search;
@@ -24,10 +378,10 @@
      }
    });
 
-   let fd1 = "fd=";
-   if(typeof giddyUtils.genFD() !== undefined) {
-     fd1 = giddyUtils.genFD();
-   }
+  let fd1 = "fd=";
+//    if(typeof giddyUtils.genFD() !== undefined) {
+//      fd1 = giddyUtils.genFD();
+//    }
    let deskButtonSelf = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?quizisfor=myself&utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
    let deskButtonPartner = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?quizisfor=mypartner&utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
    let deskButton = `https://eddiebygiddy.surveysparrow.com/s/try-eddie-quiz/tt-5e5546?utm_campaign=${utmCampaign}&utm_source=${utmSource}&utm_medium=${utmMedium}&utm_content=${utmContent}&utm_term=${utmTerm}&select=${select}&${fd1}&${lp}`;
