@@ -41,9 +41,11 @@
     $(document).ready(function(){
         // CODE TO UPDATE EDDIE BY GIDDY HOME PAGE
         let navBar =  getComponent("../components/global/gh-nav.html");
+        let threeCol =  getComponent("../components/three-column/three-column-dynamic.html");
 
         Promise.all([
         navBar,
+        threeCol
       ]).then((values) => {
         for (let index = 0; index < values.length; index++) {
           $("body").append(values[index]);          

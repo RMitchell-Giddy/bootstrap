@@ -1,39 +1,62 @@
  <!-- Giddy Health Navbar STARTS -->
- <nav class="container-md navbar navbar-expand-lg navbar-light bg-white">
-    <a id="eddie-logo-nav" class="navbar-brand" href="../eddie-hp/index.html">
-        <img id="nav-logo-eddie" src="https://giddywebhosting.blob.core.windows.net/image-assets/eddie-logo-dark.svg"
-          width="auto" height="auto" alt="eddie-by-giddy-logo" />
-      </a>
-      <div id="buy-now-eddie" class="navbar row ml-auto order-lg-2 mr-lg-3">
-        <a class="btn btn-danger mr-2 mr-lg-0 px-3" href="#">BUY NOW</a>
-    </div>
-    <button id="hamburger-menu-eddie" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <!-- Code for NavBar Links -->
-    <div class="col-4">
-        <div class="list-group" id="list-tab" role="tablist">
-          <a class="list-group-item list-group-item-action active" id="list-mens-list" data-toggle="list" href="#list-mens" role="tab" aria-controls="mens">Men's Vitamins</a>
-          <div class="tab-pane fade show active" id="list-mens" role="tabpanel" aria-labelledby="list-mens-list">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Multivitamin</a>
-                <a href="#" class="list-group-item list-group-item-action">Libido Boost</a>
-                <a href="#" class="list-group-item list-group-item-action">Prostate Health</a>
-              </div>
-          </div>
+ <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-dark px-0 justify-content-between">
+        <!-- Code for NavBar Links -->
+    <div class="btn-lists col-4">
+        <div class="d-flex">
+            <div>
+                <a class="cat-list text-white btn" id="list-mens-list" data-toggle="collapse"
+                    href="#list-mens" aria-controls="list-mens">Men's Vitamins</a>
+                <div class="tab-pane fade collapse" id="list-mens" aria-labelledby="list-mens-list">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Multivitamin</a>
+                        <a href="#" class="list-group-item list-group-item-action">Libido Boost</a>
+                        <a href="#" class="list-group-item list-group-item-action">Prostate Health</a>
+                    </div>
+                </div>
+            </div>
 
-          <a class="list-group-item list-group-item-action" id="list-womens-list" data-toggle="list" href="#list-womens" role="tab" aria-controls="womens">Women's Vitamins</a>
-          <div class="tab-pane fade show active" id="list-mens" role="tabpanel" aria-labelledby="list-mens-list">
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action">Multivitamin</a>
-                <a href="#" class="list-group-item list-group-item-action">Libido Boost</a>
-                <a href="#" class="list-group-item list-group-item-action">Menopause Support</a>
-              </div>
-          </div>
-          
-          <a class="list-group-item list-group-item-action" id="list-bundles-list" data-toggle="list" href="#list-bundles" role="tab" aria-controls="bundles">Bundles</a>
+            <div>
+                <a class="cat-list text-white btn" id="list-womens-list" data-toggle="collapse"
+                    href="#list-womens" role="tab" aria-controls="list-womens">Women's Vitamins</a>
+                <div class="tab-pane fade collapse" id="list-womens" aria-labelledby="list-womens-list">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Multivitamin</a>
+                        <a href="#" class="list-group-item list-group-item-action">Libido Boost</a>
+                        <a href="#" class="list-group-item list-group-item-action">Menopause Support</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <a class="cat-list text-white btn" id="list-bundles-list" data-toggle="collapse"
+                    href="#list-bundles" role="tab" aria-controls="list-bundles">Bundles</a>
+                <div class="tab-pane fade collapse" id="list-bundles"
+                    aria-labelledby="list-bundles-list">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item list-group-item-action">Men's Complete Bundle</a>
+                        <a href="#" class="list-group-item list-group-item-action">Menopause Complete Bundle</a>
+                        <a href="#" class="list-group-item list-group-item-action">Women's Bedroom Bundle</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
+    </div>
+
+    <a id="health-logo-nav" class="d-flex col-4 justify-content-center" href="../templates/index.html">
+        <img id="nav-logo-eddie" src="https://giddywebhosting.blob.core.windows.net/image-assets/eddie-logo-dark.svg"
+            width="auto" height="auto" alt="giddy-health-logo" />
+    </a>
+
+    <div id="account-cart-icons" class="navbar col-4 justify-content-end">
+        <a class="px-3" href="#">Account</a>
+        <a class="px-3" href="#">Cart</a>
+    </div>
+
+    <button id="hamburger-menu-eddie" class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
   </nav>
   <!-- Giddy Health Navbar ENDS -->
